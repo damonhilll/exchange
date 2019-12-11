@@ -1,0 +1,5 @@
+.DS_Store
+WEB-INF/lib
+WEB-INF/log4j.properties
+WEB-INF/proxool.xml
+

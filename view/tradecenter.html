@@ -1,0 +1,247 @@
+
+<div class="trade-panel">
+    <div class="tp-row-1">
+        <div class="page-content">
+            <div class="chart-wrap pc-row-2">
+                <div class="pc-row-2-c3">
+                    <!-- coin -->
+                    <div class="mini-ticker" id="miniTicker">
+                        <div class="mt-header f-cb">
+                            <!-- <span class="uppercase f-fl" style="display: none;"></span> -->
+                            <span class="uppercase f-fl cur">usdt</span>
+                            <span class="uppercase f-fl">eth</span>
+                            <span class="uppercase f-fl op-self"></span>
+                        </div>
+                        <div class="mt-search-wrap">
+                            <i class="fa fa-search"></i>
+                            
+                        </div>
+                        <div class="mt-data-wrap">
+                            <div class="mt-sort-wrap sort-icon-wrap media-coin-unit">
+                                
+                            </div>
+                            <div class="mt-data-main" id="miniTickerList">
+                                <!-- <div id="miniZCTicker" style="display: none;"></div> -->
+                                <div class="cur" id="miniUSDTTicker"></div>
+                                <div id="miniETHTicker"></div>
+                                <div id="miniUserTicker"></div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- 币种 END  -->
+                    <!-- begin -->
+                        <div class="tr2-c2">
+                            <div class="tr2-c2-inner" id="tr2Innerx">
+                                <div class="head">
+                                    <span class="time-lan">实时成交</span>
+                                </div>
+                                <div class="market-header">
+                                    
+                                </div>
+                                <div class="main">
+                                    <div class="market-list">
+                                        <dl class="market-trades-price" id="mtPrice"></dl>
+                                        <dl class="market-trades-amount f-tl" id="mtAmount"></dl>
+                                        <dl class="market-trades-time" id="mtTime"></dl>
+                                    </div>
+                                </div>
+                            </div>
+                        </div> 
+                    <!-- end -->
+
+                </div>
+
+                <div class="pc-row-2-c1">
+                    <div class="chart-header" id="chartHeader">
+                        <div style="width: 100%;margin:0 auto;padding:0">
+                            <div class="f-fl" style="line-height: 33px;font-weight: 18px;">
+                                <div><span class="dspName"></span></div>
+                                <div style="font-size: 16px;">
+                                    <span class="desc uppercase"></span>
+                                    <span class="rate" style="margin-left:30px; "></span>
+                                </div>
+                            </div>
+                            <table class="f-cb f-fr" >
+                                <tr>
+                                    <th style="font-weight: 400" class="hign-lan">24H最高价</th>
+                                    <th style="padding:0 20px;font-weight: 400" class="low-lan">24H最低价</th>
+                                    <th style="font-weight: 400" class="all-lan">24H成交量</th>
+                                </tr>
+                                <tr align="center">
+                                    <td style="font-weight: 600"><span class="high"></span></td>
+                                    <td style="font-weight: 600"><span class="low"></span></td>
+                                    <td style="font-weight: 600"><span class="amount uppercase"></span></td>
+                                </tr>
+                            </table>
+                        </div>
+                    </div>
+                    <div class="chart-main" id="tv_chart_container_k"></div>
+                    <div class="pc-row-2 pc-ssx">
+                            <!-- begin -->
+                            <div class="pc-row-2-c1" id="pcRow2C1" style="margin:0">
+                                <div class="inner">
+                                    <div class="buy-and-sold-main f-cb">
+                                        <div class="panel buy-in f-fl">
+                                            <div class="inner-panel">
+                                                
+                                                <div class="buy-in-price price" style="margin-bottom: 20px;">
+                                                    <span class="price-lan">价格/<i></i></span>
+                                                    <div class="input-wrap">
+                                                        <input type="text" maxlength="14">
+                                                    </div>
+                                                </div>
+                                                <div class="transfer-cny"></div>
+                                                <div class="buy-in-sum" style="margin-bottom: 20px;">
+                                                    <span class="amount-lan">数量/<i></i></span>
+                                                    <div class="input-wrap">
+                                                        <input type="text" maxlength="14">
+                                                        
+                                                    </div>
+                                                </div>
+                                                <div class="input-range" >
+                                                     <div class="range">
+                                                        <div class="progress"></div>
+                                                        <div class="path"></div>
+                                                        <i class="pointer" style="left:0%; transform:translateX(0%);"></i>
+                                                        <i class="pointer" style="left:25%; transform:translateX(-25%);"></i>
+                                                        <i class="pointer" style="left:50%; transform:translateX(-50%);"></i>
+                                                        <i class="pointer" style="left:75%; transform:translateX(-75%);"></i>
+                                                        <i class="pointer" style="right:0%;"></i>
+                                                        <i class="drag_bar"></i>
+                                                        <i class="drag_track"></i>
+                                                    </div>
+                                                </div>
+                                                <!--    -->
+                                                <div class="amount_range uppercase f-cb" style="display: none">
+                                                    <span class="min f-fl">
+                                                        <span class="min_num">0</span>
+                                                        <em></em>
+                                                    </span>
+                                                    <span class="max f-fr">
+                                                        <span class="max_num"></span>
+                                                        <em></em>
+                                                    </span>
+                                                </div>
+                                                <div class=" f-cb">
+                                                    <span class="total-lan">交易额</span>
+                                                    <div class="can-use f-fr" id="buyInCanUse"></div>
+                                                </div>
+                                                <div class="trade-total input-wrap">
+                                                    <input type="" name="" readonly> 
+                                                    <i class="uppercase"></i>
+                                                </div>
+                                                <div class="buy-in-button btn" id="buyInBtn">买入 <i></i></div>
+                                            </div>
+                                        </div>
+                                        <div class="panel sold-out f-fl">
+                                            <div class="inner-panel">
+                                               
+                                                <div class="sold-out-price price"  style="margin-bottom: 20px;">
+                                                    <span class="price-lan">价格/<i></i></span>
+                                                    <div class="input-wrap">
+                                                        <input type="text" maxlength="14">
+                                                        
+                                                    </div>
+                                                </div>
+                                                <div class="transfer-cny"></div>
+                                                <div class="sold-out-sum"  style="margin-bottom: 20px;"> 
+                                                    <span class="amount-lan">数量/<i></i></span>
+                                                    <div class="input-wrap">
+                                                        <input type="text" maxlength="14">
+                                                        
+                                                    </div>
+                                                </div>
+                                                <div class="input-range">
+                                                     <div class="range">
+                                                        <div class="progress"></div>
+                                                        <div class="path"></div>
+                                                        <i class="pointer" style="left:0%; transform:translateX(0%);"></i>
+                                                        <i class="pointer" style="left:25%; transform:translateX(-25%);"></i>
+                                                        <i class="pointer" style="left:50%; transform:translateX(-50%);"></i>
+                                                        <i class="pointer" style="left:75%; transform:translateX(-75%);"></i>
+                                                        <i class="pointer" style="right:0%;"></i>
+                                                        <i class="drag_bar"></i>
+                                                        <i class="drag_track"></i>
+                                                    </div>
+                                                </div>
+                                                <div class="amount_range uppercase f-cb" style="display: none">
+                                                    <span class="min f-fl">
+                                                        <span class="min_num">0</span>
+                                                        <em></em>
+                                                    </span>
+                                                    <span class="max f-fr">
+                                                        <span class="max_num"></span>
+                                                        <em></em>
+                                                    </span>
+                                                </div>
+                                                <div class=" f-cb">
+                                                    <span class="total-lan">交易额 </span>
+                                                    <div class="can-use f-fr" id="soldOutCanUse"></div>
+                                                </div>
+                                                <div class="input-wrap trade-total">
+                                                    <input type="" name="" readonly>
+                                                    <i class="uppercase"></i>
+                                                </div>
+                                                <div class="sold-out-button btn" id="soldOutBtn">卖出 <i></i></div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- end -->
+
+                        </div>
+                </div>
+                    <!-- depth -->
+                    <div class="pc-row-2-c2" id="depth">
+                        <div class="head">
+                            <div class="up-and-down ">
+                                <span class="up"></span>
+                                <span class="down"></span>
+                                <span class="mixed"></span>
+                            </div>
+                        </div>
+                        <div class="main-header">
+                            <dl>
+                                <dt>
+                                    <div class="header">
+                                        
+                                    </div>
+                                </dt>
+                            </dl>
+                        </div>
+                        <div class="main">
+                            <div class="depth-sell depth-sell-1 hideheight">
+                                <dl class="sell-bar" id="sellBar"></dl>
+                            </div>
+                            <!-- <div class="dl-hr"></div> -->
+                            <div class="depth-buy depth-buy-1 hideheight" >
+                                <dl class="buy-bar" id="buyBar"></dl>
+                            </div>
+                            <div class="sell-buy-bar">
+                                 <div class="depth-sell">
+                                    <dl class="sell-bar" id="sellBar1"></dl>
+                                </div>
+                                <div class="sell-buy-bar-num ">
+                                     <span class="new_price-lan">最新价</span> ≈ <em style="color:rgb(1, 189, 143)"></em> USDT
+                                </div>
+                                <div class="depth-buy">
+                                    <dl class="buy-bar" id="buyBar1"></dl>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- end depth -->
+            </div>
+
+            
+        </div>
+    </div>
+    <div class="tp-row-2">
+        <div class="tr2-inner" id="tr2Inner">
+            
+            
+        </div>
+    </div>
+
+</div>

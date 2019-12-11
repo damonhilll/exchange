@@ -1,0 +1,306 @@
+<!DOCTYPE html>
+<html lang="zh">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <meta http-equiv="Content-Type" content="no-cache">
+    <title>下载APP_Zero</title>
+    <link rel="stylesheet" href="app.css">
+    <script src="jquery-1.11.3.min.js"></script>
+    <style type="text/css">
+        .contains{
+            background: url(images/download_bg.jpg) no-repeat center top/100% 100%;
+            max-width: 1125px;
+            margin:0 auto;
+            padding-bottom: 2rem
+        }
+        .logo,
+        .phone{
+            width: 100%;
+            text-align: center; 
+        }
+        .logo img{
+            width: 60%;
+            margin-top:2rem;
+            margin:2rem 0;
+        }
+        .phone img{
+            width: 60%;
+            
+        }
+        .topBox {
+            /*height: 300px;*/
+            /*background: url(../img/app/bg.png) center no-repeat;
+            background-size: cover;*/
+        }
+        .topBox a {
+            -webkit-tap-highlight-color: transparent;
+        }
+        #downUrl2,
+        #downUrl3,
+        #downUrl,
+        .downUrl{
+            width: 15rem;
+            height: 2.25rem;
+            color: #fff;
+            font-size: 0.9rem;
+            /*background: linear-gradient(45deg,rgba(23,214,149,1) 0%,rgba(254,202,58,1) 100%);*/
+            background:#4a3699;
+            display: block;
+            border: none;
+            border-radius: 1.1rem;
+            margin: auto;
+            margin-top:1rem;
+            outline: none;
+            text-decoration: none;
+            font-size: 1rem;
+            text-align: center;
+            line-height: 2.25rem;
+        }
+        #downUrl3,
+        #downUrl2{
+            display: none;
+        }
+        .box {
+            color:  #262a4f;
+            text-align: center;
+            margin-top: 2rem;
+            margin-bottom: 2rem;
+        }
+        .box .top {
+            display: flex;
+            align-items: center;
+            padding-left: 0.75rem;
+            padding-bottom: 0.5rem;
+            margin-top:2rem;
+        }
+        .box .top span{
+           background-color: #4a3699;
+           padding:8px 6px;
+           border-radius: 10px 10px;
+           color:#f3bb2b;
+           font-size:0.8rem;
+        }
+        .box p {
+            font-size: 0.8rem;
+            color: #999;
+            line-height: 1rem;
+            text-align: left;
+            padding: 0 1.34rem;
+            letter-spacing: 0.04rem;
+            clear: both;
+
+        }
+        .box p img{
+            width: 2rem;
+            margin-right: 0.8rem;
+        }
+         .box p:nth-child(5){
+            margin-bottom:1rem;
+         }
+         .box p:nth-child(3) {
+            padding: 0.8rem 1.34rem;
+            color:  #999;
+            margin-bottom: 0.8rem
+        }
+        .box p:nth-child(2) {
+            line-height: 1rem;
+            padding: 0.5rem 1.34rem;
+            color:  #999;
+            font-size: 0.8rem;
+        }
+        .box .bottom{
+            clear: both;
+            text-align: center;
+            font-size: 0.8rem;
+            color:#999;
+        }
+        .i1{
+            display: flex;
+            vertical-align: middle;
+            align-items: center;
+            margin-bottom: 1rem;
+        }
+        .logo-txt{
+          font-size: 30px;
+          color:#fff;
+          text-align: center;
+          line-height: 50px;
+        }
+        .logo-txt2{
+          font-size: 14px;
+          color:#96c2e7;
+          text-align: center;
+          line-height: 20px;
+          margin-bottom: 10px;
+        }
+        .downUrl img{
+          width: 20px;
+          margin-right: 10px;
+          position: relative;
+          top:5px;
+        }
+    </style>
+</head>
+    
+<body>
+    <div class="contains">
+        <div class="topBox">
+                <div class="logo"><img src="http://www.zeroexchange.vip/images/logo1.png" alt=""></div>
+                <div class="phone"><img src="images/phone.png" alt=""></div>
+                <a class="downUrl" id="downUrl" onclick="goInfo()" href="javascript:void(0)">
+                  <img src="images/andra.png" />
+                  安卓版下载
+                </a>
+                <a class="downUrl" id="downUrl4" onclick="goInfo1()" href="javascript:void(0)">
+                  <img src="images/ios.png" />
+                  苹果版下载
+                </a>
+                <!-- <a class="downUrl" id="downUrl" onclick="goInfo()" href="javascript:void(0)">点击下载安装</a> -->
+                <a class="downUrl" id="downUrl3" href="javascript:void(0)">下载中...</a>
+                <a class="downUrl" id="downUrl2" href="https://www.pgyer.com/app/getProvisionFile">信任开发者</a>
+        </div>
+        <div class="box">
+            <div class="top">
+                <!-- <img src="img/app/triangle@2x.png" alt=""> -->
+                <span>温馨提示</span>
+            </div>
+            <p>下载完成打开应用，IOS系统会提示“未受信任的企业级开发者”。</p>
+            <p>解决方法如下：</p>
+            <p class="i1">
+                <img src="images/one.png">
+
+                <span>点击手机中的设置-点击通用，进入通用设置。</span>
+            </p>
+            <p class="i1"><img src="images/two.png">
+                <span>
+                   寻找通用设置中的设备管理，进入通用设置，查询刚刚提示未受信任的企业级开发者前缀，点击进入。
+                </span>
+            </p>
+            <p class="i1"><img src="images/three.png">
+                <span>在弹出窗口点击信任操作，即完成信任应用。</span></p>
+            <div class="bottom">(返回桌面即可打开应用了)</div>
+        </div> 
+    </div>
+    
+    <div class="dialog">
+      <div class="mask"></div>
+      <div class="dialog-content">
+        <div class="arrow">
+          <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAHUAAABWCAMAAADG4ikWAAAAP1BMVEVMaXH////////////////////////////////////////////////////////////////////////////////u4+wCAAAAFHRSTlMA4MgHKQI5DvIYt1arf9NHj3Bjm4QqZPEAAAJ8SURBVBgZ5cFZcuM4FEXBgxkgQYLD3f9aS9FVEdXdnihLfv5wJnbc2rd9xICloj+cX7DT8ryfk5O0YK5URUzlqTDLYyks0kLXjqG4SksoUsNOrHIZDk1YOs8CeB1YKfzRVAs20uYKv+3q2GheGvzW9oyJUeUyxqI0NcxtCz/B8AVzu7RjLJ3SgrEwqc6Y21zGXmoYiwF7uU4Ba6OqJ4yNqjNhLEsb5sK08Q0S1hrfINYzYa05TQljwcsXjKUu17DW1hqxVyI/Qpj5BpsWzGUpYm7VgrkhF3ip5Xk/gDJHvsCknRdy1Y0HslTPkXiycgT+akefgKbq+3YAcXKSPF+nbKtuCtD4Ky7rztcI3DjVvkdeSkBOPEtq3KRx1gyMnHhLVk88SdNK3JyknfcNaeFJolZ2aV0iH5mlyFOMrom2Za441Xlc250kz1VRtfCos0puk+OyOfKwU9NIQStG2nIArXFTsBHPKpcwVSZJ0+AzzinySb6ekX/LmWtSVeNu4chAbPzHrDVxSdbKvcLuNPFScDq4pGvhPmWp0jrzilk1ckFUbdynVPnB67p84GOjbtyhFWAevKU417igNC5rW914X2w8V9uq1Lkg8Z42uK5UacpccPjG25rT4Lo+Za4Iq+rMW6KTL1xRlhlIXFS6NEVedVT5wgVhr3KJexxVE68pTmfgY+lwks/cp50RaIn/m2euSKv84HPW2o+Y+EfcfeeaAoyZT2qrbmqCslZJtXBB9p3HxL07ByTJ9bnwsdil2nhY4CYWLtmkuhSMLdoalkIGSsTU7GrDWPbSGrG1SO5IGIt1CVgKBzcFU7PTjLHspTVja0juSBhLfin8DL8AiM8cHpNEtigAAAAASUVORK5CYII=" alt="">
+        </div>
+        <div class="tip-wrap">
+          <p>请点击右上角，选择“在浏览器中打开”</p>
+          <p class="tip">微信/QQ 内无法下载应用</p>
+        </div>
+      </div>
+    </div>
+</body>
+<script type="text/javascript">
+var wx= (function(){
+return navigator.userAgent.toLowerCase().indexOf('micromessenger') !== -1
+}
+)();
+var qq= (function(){
+  var ua = navigator.userAgent.toLowerCase();
+  return !!ua.match(/ qq\//i); 
+  }
+)();
+if(wx || qq){
+    $(".dialog").show();
+    // alert("是微信");
+}else {
+    $(".dialog").hide();
+    // alert("不是微信");
+}
+
+var u = navigator.userAgent, app = navigator.appVersion;
+var isAndroid = u.indexOf('Android') > -1 || u.indexOf('Linux') > -1; //g
+
+//要先判断当前是什么系统，否则会报错，无法执行语句
+if (isAndroid) {
+   // alert("我是安卓");
+}else{
+   if (navigator.userAgent.match(/os\s+(\d+)/i) == null) {
+  } else {
+      var IOSversion = navigator.userAgent.match(/os\s+(\d+)/i)[1] - 0;//获取iOS的系统版本号
+
+      var isIOS = !!u.match(/\(i[^;]+;( U;)? CPU.+Mac OS X/); //iOS终端
+
+
+      if (isIOS && IOSversion < "11") {
+        // alert("我是ios")
+      } else {
+
+         // alert("我是iOS11");
+      }
+  }
+}
+  function goInfo(){
+    if(/Android|webOS|iPhone|iPod|BlackBerry/i.test(navigator.userAgent)) {
+        // window.location.href = "./download/app.html";
+    } else {
+       alert("请在手机浏览器打开该页面");
+       return false;
+    }
+
+    var u = navigator.userAgent, app = navigator.appVersion;
+    var isAndroid = u.indexOf('Android') > -1 || u.indexOf('Linux') > -1; //g
+
+    //要先判断当前是什么系统，否则会报错，无法执行语句
+    if (isAndroid) {
+       window.location.href="https://zero.u1c.cc/zero.apk";
+    }else{
+       if (navigator.userAgent.match(/os\s+(\d+)/i) == null) {
+      } else {
+        
+      }
+    } 
+}
+
+  function goInfo1(){
+  
+    if(/Android|webOS|iPhone|iPod|BlackBerry/i.test(navigator.userAgent)) {
+        // window.location.href = "./download/app.html";
+    } else {
+       alert("请在手机浏览器打开该页面");
+       return false;
+    }
+
+    var u = navigator.userAgent, app = navigator.appVersion;
+    var isAndroid = u.indexOf('Android') > -1 || u.indexOf('Linux') > -1; //g
+
+    //要先判断当前是什么系统，否则会报错，无法执行语句
+    if (isAndroid) {
+       
+    }else{
+      // alert("ios暂未提供下载");
+      //   return;
+       if (navigator.userAgent.match(/os\s+(\d+)/i) == null) {
+      } else {
+          var IOSversion = navigator.userAgent.match(/os\s+(\d+)/i)[1] - 0;//获取iOS的系统版本号
+
+          var isIOS = !!u.match(/\(i[^;]+;( U;)? CPU.+Mac OS X/); //iOS终端
+
+
+          if (isIOS && IOSversion < "11") {
+            // alert("我是ios")
+            window.location.href="http://tnt2014.com/app.php/NTY3";
+          } else {
+            window.location.href="http://tnt2014.com/app.php/NTY3";
+             // alert("我是iOS11");
+          }
+          $("#downUrl4").hide();
+          $("#downUrl3").css("display","block");
+          setTimeout(function(){
+            $("#downUrl3").hide();
+            $("#downUrl2").css("display","block");
+          },5000);
+
+      }
+    } 
+}
+</script>
+</html>

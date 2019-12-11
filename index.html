@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="zh">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" id="viewport" content="width=device-width, initial-scale=0,maximum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <meta http-equiv="Content-Type" content="no-cache">
+    <title>Zero | 全球高标准数字资产交易平台</title>
+    <link rel="stylesheet" href="css/common.css">
+    <link rel="stylesheet" href="lib/css/font-awesome.min.css">
+    <link rel="stylesheet" href="lib/css/swiper.min.css">
+    <link rel="stylesheet" href="css/base20190112.css">
+    <script src="lib/js/jquery-1.11.3.min.js"></script>
+    <script src="lib/js/jquery.qrcode.min.js"></script>
+    <script src="lib/js/gt.js"></script>
+    <script src="charting_library/charting_library.min.js" type="text/javascript"></script>
+    <script src="charting_library/datafeed/udf/datafeed.js" type="text/javascript"></script>
+    <script src="js/tvConfig.js" type="text/javascript"></script>
+    <script src="js/config20181225.js" type="text/javascript"></script>
+    <script src="lib/js/swiper.min.js"></script>
+    <script src="lib/js/qrcode.min.js"></script>
+    <script src="lib/js/require.js" data-main="js/main20190112.js"></script>
+</head>
+
+<body>
+    <div class="home-header">
+        <div class="placeholder"></div>
+        <div class="inner-header f-cb">
+            <h1 class="head-logo f-fl">
+                <a href="#/home">
+                    <img src="images/logo1.png" alt="专业数字资产交易平台">
+                </a>
+            </h1>
+            <ul class="head-nav f-fl">
+            </ul>
+            <ul class="head-user f-fr">
+                <li style="color:#fff">|</li>
+                <li class="ai-fat">
+                    <a class="app-download"><img src="../images/phone.png" alt="" style="vertical-align: middle;margin-right: 9px;">APP </a>
+                    <!-- <ul class="drop-menu f-cb ai-download">
+                       <li class="f-fl">
+                           <div>android下载</div>
+                           <div>
+                               <img src="../images/download-mobile1.png" alt="" width="80" height="80">
+                           </div>
+                       </li>
+                       <li class="f-fl">
+                           <div>ios下载</div>
+                           <div>
+                               <img src="../images/download-mobile1.png" alt="" width="80" height="80">
+                           </div>
+                       </li>
+                    </ul> -->
+                </li>
+                 <li style="color:#fff">|</li>
+                <li class="change-language">
+                    <a class="yuyan"></a>
+
+                </li>
+            </ul>
+            <ul class="head-user f-fr" id="headlogin"></ul>
+            <ul class="head-user f-fr" id="headlogout"></ul>
+        </div>
+    </div>
+    <!-- <div style="width: 1200px;height: 0;position: relative;margin: 0 auto"> -->
+        <div class="chart-main" id="tv_chart_container" style="position: absolute;
+        top: 156px;
+        right: 10px;
+        left: 15.8%;
+        z-index: 1;
+        width: 56%;
+        display: none;"></div>
+    <!-- </div> -->
+    <div id="MainView" style="padding-bottom: 180px"></div>
+
+    <div class="h-footer">
+
+    </div>
+
+</body>
+ <script>
+   window.onload = function() {
+    var view_num = window.screen.availWidth / 1400;
+    document.getElementById("viewport").setAttribute('content', 'user-scalable=no, width=750, minimum-scale=' + view_num + ', initial-scale=' + view_num + ', maximum-scale=' + view_num + '');
+    }
+  </script>
+</html>

@@ -1,0 +1,2688 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <meta http-equiv="Content-Type" content="no-cache">
+    <title>Blackhorse | 争做区块链交易平台的一匹黑马</title>
+	<script src="jquery.js"></script>
+	<style type="text/css">
+		html,body,div,ul,li,p,a,em,i{
+			margin:0px;
+			padding:0px;
+		}
+		ul,li{
+			list-style: none;
+		}
+		a{
+			text-decoration: none;
+		}
+		#demos{
+			width: 1200px;
+			margin:0 auto;
+		}
+		.header{
+			height: 80px;
+			line-height: 80px;
+			padding-left: 20px;
+			font-size: 40px;
+			font-weight: bold;
+			border-bottom:1px solid #eee;
+		}
+		#demos .title{
+			float: left;
+			width: 200px;
+		}
+		#demos .title li{
+			height: 40px;
+			line-height: 40px;
+			border-bottom:1px solid #ddd;
+			font-size: 16px;
+			/*text-align: center;*/
+			width: 100%;
+			cursor: pointer;
+		}
+		#demos .content{
+			float: right;
+			width: 980px;
+			padding-left: 20px;
+		}
+		.cur{
+			background: #eee;
+			/*color:#fff;*/
+		}
+	</style>
+</head>
+
+<body>
+	<div id="demos">
+		<div class="header">API文档</div>
+		<ul class="title"><li  class="cur">1. 获取单个订单交易明细</li><li  class="">2. 获取订单列表</li><li class="">3. 成交记录</li><li class="">4. 获取单个币资产</li><li class="">5. 会员资产列表</li><li class="">6. 行情汇总</li><li>7. 市场深度</li><li>8. 获取系统支持的交易对</li><li>9. 创建交易订单</li><li>10. 取消交易订单</li><li>11. 获取ķ线数据</li><li>12. 获取公告列表</li><li>13. 获取公告详情</li></ul>
+		<div class="content">
+			<ul>
+				
+			<li ><h1 class="flex-auto min-width-0 mb-2 mb-md-0 mr-0 mr-md-2 gh-header-title instapaper_title" style="box-sizing: border-box; font-size: 32px; margin: 0px 150px 0px 0px; font-weight: 400; flex: 1 1 auto !important; min-width: 0px !important; line-height: 1.125; overflow-wrap: break-word;">
+    获取单个订单的交易明细<br>
+</h1>
+<p style="box-sizing: border-box; margin-bottom: 16px; margin-top: 0px !important;">
+    1.请求URL：<a href="http://www.blackhorse.pro/o/api/order/trades/{symbol}/{id}/{api_key}/{timestamp}/{sign_type}/{sign}" target="_self">http://www.blackhorse.pro/o/api/order/trades/{symbol}/{id}/{api_key}/{timestamp}/{sign_type}/{sign}</a>
+</p>
+<p style="box-sizing: border-box; margin-bottom: 16px; margin-top: 0px;">
+    2.请求类型：GET
+</p>
+<p style="box-sizing: border-box; margin-bottom: 16px; margin-top: 0px;">
+    3.请求参数：
+</p>
+<table width="960" border="1">
+    <thead style="box-sizing: border-box;">
+        <tr style="box-sizing: border-box; border-top: 1px solid rgb(198, 203, 209);" class="firstRow">
+            <th align="center" style="box-sizing: border-box; padding: 6px 13px; border-color: rgb(223, 226, 229);">
+                参数
+            </th>
+            <th align="center" style="box-sizing: border-box; padding: 6px 13px; border-color: rgb(223, 226, 229);">
+                类型
+            </th>
+            <th align="center" style="box-sizing: border-box; padding: 6px 13px; border-color: rgb(223, 226, 229);">
+                是否参与签名
+            </th>
+            <th align="center" style="box-sizing: border-box; padding: 6px 13px; border-color: rgb(223, 226, 229);">
+                描述
+            </th>
+            <th align="center" style="box-sizing: border-box; padding: 6px 13px; border-color: rgb(223, 226, 229);">
+                示例
+            </th>
+        </tr>
+    </thead>
+    <tbody style="box-sizing: border-box;">
+        <tr style="box-sizing: border-box; border-top: 1px solid rgb(198, 203, 209);">
+            <td align="center" style="box-sizing: border-box; padding: 6px 13px; border-color: rgb(223, 226, 229);">
+                symbol
+            </td>
+            <td align="center" style="box-sizing: border-box; padding: 6px 13px; border-color: rgb(223, 226, 229);">
+                String
+            </td>
+            <td align="center" style="box-sizing: border-box; padding: 6px 13px; border-color: rgb(223, 226, 229);">
+                否
+            </td>
+            <td align="center" style="box-sizing: border-box; padding: 6px 13px; border-color: rgb(223, 226, 229);">
+                交易对名称
+            </td>
+            <td align="center" style="box-sizing: border-box; padding: 6px 13px; border-color: rgb(223, 226, 229);">
+                ETHQC
+            </td>
+        </tr>
+        <tr style="box-sizing: border-box; background-color: rgb(246, 248, 250); border-top: 1px solid rgb(198, 203, 209);">
+            <td align="center" style="box-sizing: border-box; padding: 6px 13px; border-color: rgb(223, 226, 229);">
+                id
+            </td>
+            <td align="center" style="box-sizing: border-box; padding: 6px 13px; border-color: rgb(223, 226, 229);">
+                Integer
+            </td>
+            <td align="center" style="box-sizing: border-box; padding: 6px 13px; border-color: rgb(223, 226, 229);">
+                否
+            </td>
+            <td align="center" style="box-sizing: border-box; padding: 6px 13px; border-color: rgb(223, 226, 229);">
+                订单id
+            </td>
+            <td align="center" style="box-sizing: border-box; padding: 6px 13px; border-color: rgb(223, 226, 229);">
+                142455
+            </td>
+        </tr>
+        <tr style="box-sizing: border-box; border-top: 1px solid rgb(198, 203, 209);">
+            <td align="center" style="box-sizing: border-box; padding: 6px 13px; border-color: rgb(223, 226, 229);">
+                api_key
+            </td>
+            <td align="center" style="box-sizing: border-box; padding: 6px 13px; border-color: rgb(223, 226, 229);">
+                String
+            </td>
+            <td align="center" style="box-sizing: border-box; padding: 6px 13px; border-color: rgb(223, 226, 229);">
+                <span style="box-sizing: border-box; font-weight: 600;">是</span>
+            </td>
+            <td align="center" style="box-sizing: border-box; padding: 6px 13px; border-color: rgb(223, 226, 229);">
+                用户apikey
+            </td>
+            <td align="center" style="box-sizing: border-box; padding: 6px 13px; border-color: rgb(223, 226, 229);">
+                5b092b11-001c-4e50-9d8e-00f9db752241
+            </td>
+        </tr>
+        <tr style="box-sizing: border-box; background-color: rgb(246, 248, 250); border-top: 1px solid rgb(198, 203, 209);">
+            <td align="center" style="box-sizing: border-box; padding: 6px 13px; border-color: rgb(223, 226, 229);">
+                timestamp
+            </td>
+            <td align="center" style="box-sizing: border-box; padding: 6px 13px; border-color: rgb(223, 226, 229);">
+                long
+            </td>
+            <td align="center" style="box-sizing: border-box; padding: 6px 13px; border-color: rgb(223, 226, 229);">
+                <span style="box-sizing: border-box; font-weight: 600;">是</span>
+            </td>
+            <td align="center" style="box-sizing: border-box; padding: 6px 13px; border-color: rgb(223, 226, 229);">
+                时间戳精确到秒
+            </td>
+            <td align="center" style="box-sizing: border-box; padding: 6px 13px; border-color: rgb(223, 226, 229);">
+                1540619752
+            </td>
+        </tr>
+        <tr style="box-sizing: border-box; border-top: 1px solid rgb(198, 203, 209);">
+            <td align="center" style="box-sizing: border-box; padding: 6px 13px; border-color: rgb(223, 226, 229);">
+                sign_type
+            </td>
+            <td align="center" style="box-sizing: border-box; padding: 6px 13px; border-color: rgb(223, 226, 229);">
+                String
+            </td>
+            <td align="center" style="box-sizing: border-box; padding: 6px 13px; border-color: rgb(223, 226, 229);">
+                <span style="box-sizing: border-box; font-weight: 600;">是</span>
+            </td>
+            <td align="center" style="box-sizing: border-box; padding: 6px 13px; border-color: rgb(223, 226, 229);">
+                签名类型
+            </td>
+            <td align="center" style="box-sizing: border-box; padding: 6px 13px; border-color: rgb(223, 226, 229);">
+                MD5
+            </td>
+        </tr>
+        <tr style="box-sizing: border-box; background-color: rgb(246, 248, 250); border-top: 1px solid rgb(198, 203, 209);">
+            <td align="center" style="box-sizing: border-box; padding: 6px 13px; border-color: rgb(223, 226, 229);">
+                sign
+            </td>
+            <td align="center" style="box-sizing: border-box; padding: 6px 13px; border-color: rgb(223, 226, 229);">
+                String
+            </td>
+            <td align="center" style="box-sizing: border-box; padding: 6px 13px; border-color: rgb(223, 226, 229);">
+                否
+            </td>
+            <td align="center" style="box-sizing: border-box; padding: 6px 13px; border-color: rgb(223, 226, 229);">
+                具体查看<a href="sign.html" style="box-sizing: border-box; background-color: transparent; color: rgb(3, 102, 214); text-decoration-line: none;">签名认证</a>
+            </td>
+            <td align="center" style="box-sizing: border-box; padding: 6px 13px; border-color: rgb(223, 226, 229);">
+                3cbbe236e86105b1a041cfe1fe01
+            </td>
+        </tr>
+    </tbody>
+</table>
+<p style="box-sizing: border-box; margin-bottom: 16px; margin-top: 0px;">
+    4.返回参数
+</p>
+<table width="960" border="1">
+    <thead style="box-sizing: border-box;">
+        <tr style="box-sizing: border-box; border-top: 1px solid rgb(198, 203, 209);" class="firstRow">
+            <th align="center" style="box-sizing: border-box; padding: 6px 13px; border-color: rgb(223, 226, 229);">
+                参数
+            </th>
+            <th align="center" style="box-sizing: border-box; padding: 6px 13px; border-color: rgb(223, 226, 229);">
+                类型
+            </th>
+            <th align="center" style="box-sizing: border-box; padding: 6px 13px; border-color: rgb(223, 226, 229);">
+                描述
+            </th>
+            <th align="center" style="box-sizing: border-box; padding: 6px 13px; border-color: rgb(223, 226, 229);">
+                示例
+            </th>
+        </tr>
+    </thead>
+    <tbody style="box-sizing: border-box;">
+        <tr style="box-sizing: border-box; border-top: 1px solid rgb(198, 203, 209);">
+            <td align="center" style="box-sizing: border-box; padding: 6px 13px; border-color: rgb(223, 226, 229);">
+                state
+            </td>
+            <td align="center" style="box-sizing: border-box; padding: 6px 13px; border-color: rgb(223, 226, 229);">
+                Integer
+            </td>
+            <td align="center" style="box-sizing: border-box; padding: 6px 13px; border-color: rgb(223, 226, 229);">
+                请求状态1成功，-1失败
+            </td>
+            <td align="center" style="box-sizing: border-box; padding: 6px 13px; border-color: rgb(223, 226, 229);">
+                1
+            </td>
+        </tr>
+        <tr style="box-sizing: border-box; background-color: rgb(246, 248, 250); border-top: 1px solid rgb(198, 203, 209);">
+            <td align="center" style="box-sizing: border-box; padding: 6px 13px; border-color: rgb(223, 226, 229);">
+                msg
+            </td>
+            <td align="center" style="box-sizing: border-box; padding: 6px 13px; border-color: rgb(223, 226, 229);">
+                String
+            </td>
+            <td align="center" style="box-sizing: border-box; padding: 6px 13px; border-color: rgb(223, 226, 229);">
+                请求状态说明
+            </td>
+            <td align="center" style="box-sizing: border-box; padding: 6px 13px; border-color: rgb(223, 226, 229);">
+                success
+            </td>
+        </tr>
+        <tr style="box-sizing: border-box; border-top: 1px solid rgb(198, 203, 209);">
+            <td align="center" style="box-sizing: border-box; padding: 6px 13px; border-color: rgb(223, 226, 229);">
+                trades
+            </td>
+            <td align="center" style="box-sizing: border-box; padding: 6px 13px; border-color: rgb(223, 226, 229);">
+                array
+            </td>
+            <td align="center" style="box-sizing: border-box; padding: 6px 13px; border-color: rgb(223, 226, 229);">
+                交易明细
+            </td>
+            <td align="center" style="box-sizing: border-box; padding: 6px 13px; border-color: rgb(223, 226, 229);">
+                略
+            </td>
+        </tr>
+        <tr style="box-sizing: border-box; background-color: rgb(246, 248, 250); border-top: 1px solid rgb(198, 203, 209);">
+            <td align="center" style="box-sizing: border-box; padding: 6px 13px; border-color: rgb(223, 226, 229);">
+                total
+            </td>
+            <td align="center" style="box-sizing: border-box; padding: 6px 13px; border-color: rgb(223, 226, 229);">
+                int
+            </td>
+            <td align="center" style="box-sizing: border-box; padding: 6px 13px; border-color: rgb(223, 226, 229);">
+                返回的数量
+            </td>
+            <td align="center" style="box-sizing: border-box; padding: 6px 13px; border-color: rgb(223, 226, 229);">
+                1
+            </td>
+        </tr>
+    </tbody>
+</table>
+<p style="box-sizing: border-box; margin-bottom: 16px; margin-top: 0px;">
+    5.请求成功示例
+</p>
+<pre style="box-sizing: border-box; font-family: SFMono-Regular, Consolas, &quot;Liberation Mono&quot;, Menlo, Courier, monospace; font-size: 13.6px; margin-bottom: 16px; margin-top: 0px; overflow-wrap: normal; background-color: rgb(246, 248, 250); border-radius: 3px; line-height: 1.45; overflow: auto; padding: 16px;">{
+ state: 1,
+ msg: "success",
+ trades: [{略}],
+ total: 0
+}</pre>
+<p style="box-sizing: border-box; margin-bottom: 16px; margin-top: 0px;">
+    6.请求失败示例
+</p>
+<pre style="box-sizing: border-box; font-family: SFMono-Regular, Consolas, &quot;Liberation Mono&quot;, Menlo, Courier, monospace; font-size: 13.6px; margin-bottom: 0px !important; margin-top: 0px; overflow-wrap: normal; background-color: rgb(246, 248, 250); border-radius: 3px; line-height: 1.45; overflow: auto; padding: 16px;">{
+ state: -1,
+ msg: "ILLEGAL_TIMESTAMP",
+ trades: null,
+ total: 0
+}</pre>
+<p>
+    <br>
+</p></li><li style="display: none;"><h1 class="flex-auto min-width-0 mb-2 mb-md-0 mr-0 mr-md-2 gh-header-title instapaper_title" style="box-sizing: border-box; font-size: 32px; margin: 0px 150px 0px 0px; font-weight: 400; flex: 1 1 auto !important; min-width: 0px !important; line-height: 1.125; overflow-wrap: break-word;">
+    获取订单列表
+</h1>
+<p style="box-sizing: border-box; margin-bottom: 16px; margin-top: 0px !important;">
+    1.请求URL：<a href="http://www.blackhorse.pro/o/api/orders/{symbol}/{page}/{page_size}/{status}/{api_key}/{timestamp}/{sign_type}/{sign}" target="_self">http://www.blackhorse.pro/o/api/orders/{symbol}/{page}/{page_size}/{status}/{api_key}/{timestamp}/{sign_type}/{sign}</a>
+</p>
+<p style="box-sizing: border-box; margin-bottom: 16px; margin-top: 0px;">
+    2.请求类型：GET
+</p>
+<p style="box-sizing: border-box; margin-bottom: 16px; margin-top: 0px;">
+    3.请求参数：
+</p>
+<table width="960" border="1">
+    <thead style="box-sizing: border-box;">
+        <tr style="box-sizing: border-box; border-top: 1px solid rgb(198, 203, 209);" class="firstRow">
+            <th align="center" style="box-sizing: border-box; padding: 6px 13px; border-color: rgb(223, 226, 229);">
+                参数
+            </th>
+            <th align="center" style="box-sizing: border-box; padding: 6px 13px; border-color: rgb(223, 226, 229);">
+                类型
+            </th>
+            <th align="center" style="box-sizing: border-box; padding: 6px 13px; border-color: rgb(223, 226, 229);">
+                是否参与签名
+            </th>
+            <th align="center" style="box-sizing: border-box; padding: 6px 13px; border-color: rgb(223, 226, 229);">
+                描述
+            </th>
+            <th align="center" style="box-sizing: border-box; padding: 6px 13px; border-color: rgb(223, 226, 229);">
+                示例
+            </th>
+        </tr>
+    </thead>
+    <tbody style="box-sizing: border-box;">
+        <tr style="box-sizing: border-box; border-top: 1px solid rgb(198, 203, 209);">
+            <td align="center" style="box-sizing: border-box; padding: 6px 13px; border-color: rgb(223, 226, 229);">
+                symbol
+            </td>
+            <td align="center" style="box-sizing: border-box; padding: 6px 13px; border-color: rgb(223, 226, 229);">
+                String
+            </td>
+            <td align="center" style="box-sizing: border-box; padding: 6px 13px; border-color: rgb(223, 226, 229);">
+                否
+            </td>
+            <td align="center" style="box-sizing: border-box; padding: 6px 13px; border-color: rgb(223, 226, 229);">
+                交易对名称
+            </td>
+            <td align="center" style="box-sizing: border-box; padding: 6px 13px; border-color: rgb(223, 226, 229);">
+                ETHQC
+            </td>
+        </tr>
+        <tr style="box-sizing: border-box; background-color: rgb(246, 248, 250); border-top: 1px solid rgb(198, 203, 209);">
+            <td align="center" style="box-sizing: border-box; padding: 6px 13px; border-color: rgb(223, 226, 229);">
+                page
+            </td>
+            <td align="center" style="box-sizing: border-box; padding: 6px 13px; border-color: rgb(223, 226, 229);">
+                Integer
+            </td>
+            <td align="center" style="box-sizing: border-box; padding: 6px 13px; border-color: rgb(223, 226, 229);">
+                否
+            </td>
+            <td align="center" style="box-sizing: border-box; padding: 6px 13px; border-color: rgb(223, 226, 229);">
+                页码，起始页码为1
+            </td>
+            <td align="center" style="box-sizing: border-box; padding: 6px 13px; border-color: rgb(223, 226, 229);">
+                1
+            </td>
+        </tr>
+        <tr style="box-sizing: border-box; border-top: 1px solid rgb(198, 203, 209);">
+            <td align="center" style="box-sizing: border-box; padding: 6px 13px; border-color: rgb(223, 226, 229);">
+                page_size
+            </td>
+            <td align="center" style="box-sizing: border-box; padding: 6px 13px; border-color: rgb(223, 226, 229);">
+                Integer
+            </td>
+            <td align="center" style="box-sizing: border-box; padding: 6px 13px; border-color: rgb(223, 226, 229);">
+                否
+            </td>
+            <td align="center" style="box-sizing: border-box; padding: 6px 13px; border-color: rgb(223, 226, 229);">
+                每页数量，最大20
+            </td>
+            <td align="center" style="box-sizing: border-box; padding: 6px 13px; border-color: rgb(223, 226, 229);">
+                20
+            </td>
+        </tr>
+        <tr style="box-sizing: border-box; background-color: rgb(246, 248, 250); border-top: 1px solid rgb(198, 203, 209);">
+            <td align="center" style="box-sizing: border-box; padding: 6px 13px; border-color: rgb(223, 226, 229);">
+                status
+            </td>
+            <td align="center" style="box-sizing: border-box; padding: 6px 13px; border-color: rgb(223, 226, 229);">
+                String
+            </td>
+            <td align="center" style="box-sizing: border-box; padding: 6px 13px; border-color: rgb(223, 226, 229);">
+                否
+            </td>
+            <td align="center" style="box-sizing: border-box; padding: 6px 13px; border-color: rgb(223, 226, 229);">
+                0表示未完成（挂单中），1表示已完成（含已取消），2表示所有
+            </td>
+            <td align="center" style="box-sizing: border-box; padding: 6px 13px; border-color: rgb(223, 226, 229);">
+                1
+            </td>
+        </tr>
+        <tr style="box-sizing: border-box; border-top: 1px solid rgb(198, 203, 209);">
+            <td align="center" style="box-sizing: border-box; padding: 6px 13px; border-color: rgb(223, 226, 229);">
+                api_key
+            </td>
+            <td align="center" style="box-sizing: border-box; padding: 6px 13px; border-color: rgb(223, 226, 229);">
+                String
+            </td>
+            <td align="center" style="box-sizing: border-box; padding: 6px 13px; border-color: rgb(223, 226, 229);">
+                <span style="box-sizing: border-box; font-weight: 600;">是</span>
+            </td>
+            <td align="center" style="box-sizing: border-box; padding: 6px 13px; border-color: rgb(223, 226, 229);">
+                用户apikey
+            </td>
+            <td align="center" style="box-sizing: border-box; padding: 6px 13px; border-color: rgb(223, 226, 229);">
+                5b092b11-001c-4e50-9d8e-00f9db752241
+            </td>
+        </tr>
+        <tr style="box-sizing: border-box; background-color: rgb(246, 248, 250); border-top: 1px solid rgb(198, 203, 209);">
+            <td align="center" style="box-sizing: border-box; padding: 6px 13px; border-color: rgb(223, 226, 229);">
+                timestamp
+            </td>
+            <td align="center" style="box-sizing: border-box; padding: 6px 13px; border-color: rgb(223, 226, 229);">
+                long
+            </td>
+            <td align="center" style="box-sizing: border-box; padding: 6px 13px; border-color: rgb(223, 226, 229);">
+                <span style="box-sizing: border-box; font-weight: 600;">是</span>
+            </td>
+            <td align="center" style="box-sizing: border-box; padding: 6px 13px; border-color: rgb(223, 226, 229);">
+                时间戳精确到秒
+            </td>
+            <td align="center" style="box-sizing: border-box; padding: 6px 13px; border-color: rgb(223, 226, 229);">
+                1540619752
+            </td>
+        </tr>
+        <tr style="box-sizing: border-box; border-top: 1px solid rgb(198, 203, 209);">
+            <td align="center" style="box-sizing: border-box; padding: 6px 13px; border-color: rgb(223, 226, 229);">
+                sign_type
+            </td>
+            <td align="center" style="box-sizing: border-box; padding: 6px 13px; border-color: rgb(223, 226, 229);">
+                String
+            </td>
+            <td align="center" style="box-sizing: border-box; padding: 6px 13px; border-color: rgb(223, 226, 229);">
+                <span style="box-sizing: border-box; font-weight: 600;">是</span>
+            </td>
+            <td align="center" style="box-sizing: border-box; padding: 6px 13px; border-color: rgb(223, 226, 229);">
+                签名类型
+            </td>
+            <td align="center" style="box-sizing: border-box; padding: 6px 13px; border-color: rgb(223, 226, 229);">
+                MD5
+            </td>
+        </tr>
+        <tr style="box-sizing: border-box; background-color: rgb(246, 248, 250); border-top: 1px solid rgb(198, 203, 209);">
+            <td align="center" style="box-sizing: border-box; padding: 6px 13px; border-color: rgb(223, 226, 229);">
+                sign
+            </td>
+            <td align="center" style="box-sizing: border-box; padding: 6px 13px; border-color: rgb(223, 226, 229);">
+                String
+            </td>
+            <td align="center" style="box-sizing: border-box; padding: 6px 13px; border-color: rgb(223, 226, 229);">
+                否
+            </td>
+            <td align="center" style="box-sizing: border-box; padding: 6px 13px; border-color: rgb(223, 226, 229);">
+                具体查看<a href="sign.html" style="box-sizing: border-box; background-color: transparent; color: rgb(3, 102, 214); text-decoration-line: none;">签名认证</a>
+            </td>
+            <td align="center" style="box-sizing: border-box; padding: 6px 13px; border-color: rgb(223, 226, 229);">
+                3cbbe236e86105b1a041cfe1fe01
+            </td>
+        </tr>
+    </tbody>
+</table>
+<p style="box-sizing: border-box; margin-bottom: 16px; margin-top: 0px;">
+    4.返回参数
+</p>
+<table width="960" border="1">
+    <thead style="box-sizing: border-box;">
+        <tr style="box-sizing: border-box; border-top: 1px solid rgb(198, 203, 209);" class="firstRow">
+            <th align="center" style="box-sizing: border-box; padding: 6px 13px; border-color: rgb(223, 226, 229);">
+                参数
+            </th>
+            <th align="center" style="box-sizing: border-box; padding: 6px 13px; border-color: rgb(223, 226, 229);">
+                类型
+            </th>
+            <th align="center" style="box-sizing: border-box; padding: 6px 13px; border-color: rgb(223, 226, 229);">
+                描述
+            </th>
+            <th align="center" style="box-sizing: border-box; padding: 6px 13px; border-color: rgb(223, 226, 229);">
+                示例
+            </th>
+        </tr>
+    </thead>
+    <tbody style="box-sizing: border-box;">
+        <tr style="box-sizing: border-box; border-top: 1px solid rgb(198, 203, 209);">
+            <td align="center" style="box-sizing: border-box; padding: 6px 13px; border-color: rgb(223, 226, 229);">
+                state
+            </td>
+            <td align="center" style="box-sizing: border-box; padding: 6px 13px; border-color: rgb(223, 226, 229);">
+                Integer
+            </td>
+            <td align="center" style="box-sizing: border-box; padding: 6px 13px; border-color: rgb(223, 226, 229);">
+                请求状态1成功，-1失败
+            </td>
+            <td align="center" style="box-sizing: border-box; padding: 6px 13px; border-color: rgb(223, 226, 229);">
+                1
+            </td>
+        </tr>
+        <tr style="box-sizing: border-box; background-color: rgb(246, 248, 250); border-top: 1px solid rgb(198, 203, 209);">
+            <td align="center" style="box-sizing: border-box; padding: 6px 13px; border-color: rgb(223, 226, 229);">
+                msg
+            </td>
+            <td align="center" style="box-sizing: border-box; padding: 6px 13px; border-color: rgb(223, 226, 229);">
+                String
+            </td>
+            <td align="center" style="box-sizing: border-box; padding: 6px 13px; border-color: rgb(223, 226, 229);">
+                查询的交易对名称
+            </td>
+            <td align="center" style="box-sizing: border-box; padding: 6px 13px; border-color: rgb(223, 226, 229);">
+                ETHQC
+            </td>
+        </tr>
+        <tr style="box-sizing: border-box; border-top: 1px solid rgb(198, 203, 209);">
+            <td align="center" style="box-sizing: border-box; padding: 6px 13px; border-color: rgb(223, 226, 229);">
+                orders
+            </td>
+            <td align="center" style="box-sizing: border-box; padding: 6px 13px; border-color: rgb(223, 226, 229);">
+                array
+            </td>
+            <td align="center" style="box-sizing: border-box; padding: 6px 13px; border-color: rgb(223, 226, 229);">
+                订单列表
+            </td>
+            <td align="center" style="box-sizing: border-box; padding: 6px 13px; border-color: rgb(223, 226, 229);">
+                略
+            </td>
+        </tr>
+        <tr style="box-sizing: border-box; background-color: rgb(246, 248, 250); border-top: 1px solid rgb(198, 203, 209);">
+            <td align="center" style="box-sizing: border-box; padding: 6px 13px; border-color: rgb(223, 226, 229);">
+                total
+            </td>
+            <td align="center" style="box-sizing: border-box; padding: 6px 13px; border-color: rgb(223, 226, 229);">
+                Integer
+            </td>
+            <td align="center" style="box-sizing: border-box; padding: 6px 13px; border-color: rgb(223, 226, 229);">
+                返回的数量
+            </td>
+            <td align="center" style="box-sizing: border-box; padding: 6px 13px; border-color: rgb(223, 226, 229);">
+                1
+            </td>
+        </tr>
+    </tbody>
+</table>
+<p style="box-sizing: border-box; margin-bottom: 16px; margin-top: 0px;">
+    5.请求成功示例
+</p>
+<pre style="box-sizing: border-box; font-family: SFMono-Regular, Consolas, &quot;Liberation Mono&quot;, Menlo, Courier, monospace; font-size: 13.6px; margin-bottom: 16px; margin-top: 0px; overflow-wrap: normal; background-color: rgb(246, 248, 250); border-radius: 3px; line-height: 1.45; overflow: auto; padding: 16px;">{
+ state: 1,
+ msg: "ETHQC",
+ orders: [{略},{略},{略} ],
+ total: 0
+}</pre>
+<p style="box-sizing: border-box; margin-bottom: 16px; margin-top: 0px;">
+    6.请求失败示例
+</p>
+<pre style="box-sizing: border-box; font-family: SFMono-Regular, Consolas, &quot;Liberation Mono&quot;, Menlo, Courier, monospace; font-size: 13.6px; margin-bottom: 0px !important; margin-top: 0px; overflow-wrap: normal; background-color: rgb(246, 248, 250); border-radius: 3px; line-height: 1.45; overflow: auto; padding: 16px;">{
+ state: -1,
+ msg: "ILLEGAL_TIMESTAMP",
+ orders: null,
+ total: 0
+}</pre>
+<p>
+    <br>
+</p></li><li style="display: none;"><h1 class="flex-auto min-width-0 mb-2 mb-md-0 mr-0 mr-md-2 gh-header-title instapaper_title" style="box-sizing: border-box; font-size: 32px; margin: 0px 150px 0px 0px; font-weight: 400; flex: 1 1 auto !important; min-width: 0px !important; line-height: 1.125; overflow-wrap: break-word;">
+    获取已成交记录
+</h1>
+<p style="box-sizing: border-box; margin-bottom: 16px; margin-top: 0px !important;">
+    1.请求URL：<a href="http://www.blackhorse.pro/o/api/trades/{symbol}/{page}/{pageSize}/{api_key}/{timestamp}/{sign_type}/{sign}" target="_self">http://www.blackhorse.pro/o/api/trades/{symbol}/{page}/{pageSize}/{api_key}/{timestamp}/{sign_type}/{sign}</a>
+</p>
+<p style="box-sizing: border-box; margin-bottom: 16px; margin-top: 0px;">
+    2.请求类型：GET
+</p>
+<p style="box-sizing: border-box; margin-bottom: 16px; margin-top: 0px;">
+    3.请求参数：
+</p>
+<table width="960" border="1">
+    <thead style="box-sizing: border-box;">
+        <tr style="box-sizing: border-box; border-top: 1px solid rgb(198, 203, 209);" class="firstRow">
+            <th align="center" style="box-sizing: border-box; padding: 6px 13px; border-color: rgb(223, 226, 229);">
+                参数
+            </th>
+            <th align="center" style="box-sizing: border-box; padding: 6px 13px; border-color: rgb(223, 226, 229);">
+                类型
+            </th>
+            <th align="center" style="box-sizing: border-box; padding: 6px 13px; border-color: rgb(223, 226, 229);">
+                是否参与签名
+            </th>
+            <th align="center" style="box-sizing: border-box; padding: 6px 13px; border-color: rgb(223, 226, 229);">
+                描述
+            </th>
+            <th align="center" style="box-sizing: border-box; padding: 6px 13px; border-color: rgb(223, 226, 229);">
+                示例
+            </th>
+        </tr>
+    </thead>
+    <tbody style="box-sizing: border-box;">
+        <tr style="box-sizing: border-box; border-top: 1px solid rgb(198, 203, 209);">
+            <td align="center" style="box-sizing: border-box; padding: 6px 13px; border-color: rgb(223, 226, 229);">
+                symbol
+            </td>
+            <td align="center" style="box-sizing: border-box; padding: 6px 13px; border-color: rgb(223, 226, 229);">
+                String
+            </td>
+            <td align="center" style="box-sizing: border-box; padding: 6px 13px; border-color: rgb(223, 226, 229);">
+                否
+            </td>
+            <td align="center" style="box-sizing: border-box; padding: 6px 13px; border-color: rgb(223, 226, 229);">
+                交易对名称
+            </td>
+            <td align="center" style="box-sizing: border-box; padding: 6px 13px; border-color: rgb(223, 226, 229);">
+                ETHQC
+            </td>
+        </tr>
+        <tr style="box-sizing: border-box; background-color: rgb(246, 248, 250); border-top: 1px solid rgb(198, 203, 209);">
+            <td align="center" style="box-sizing: border-box; padding: 6px 13px; border-color: rgb(223, 226, 229);">
+                page
+            </td>
+            <td align="center" style="box-sizing: border-box; padding: 6px 13px; border-color: rgb(223, 226, 229);">
+                Integer
+            </td>
+            <td align="center" style="box-sizing: border-box; padding: 6px 13px; border-color: rgb(223, 226, 229);">
+                否
+            </td>
+            <td align="center" style="box-sizing: border-box; padding: 6px 13px; border-color: rgb(223, 226, 229);">
+                页码，起始页码为1
+            </td>
+            <td align="center" style="box-sizing: border-box; padding: 6px 13px; border-color: rgb(223, 226, 229);">
+                1
+            </td>
+        </tr>
+        <tr style="box-sizing: border-box; border-top: 1px solid rgb(198, 203, 209);">
+            <td align="center" style="box-sizing: border-box; padding: 6px 13px; border-color: rgb(223, 226, 229);">
+                page_size
+            </td>
+            <td align="center" style="box-sizing: border-box; padding: 6px 13px; border-color: rgb(223, 226, 229);">
+                Integer
+            </td>
+            <td align="center" style="box-sizing: border-box; padding: 6px 13px; border-color: rgb(223, 226, 229);">
+                否
+            </td>
+            <td align="center" style="box-sizing: border-box; padding: 6px 13px; border-color: rgb(223, 226, 229);">
+                每页数量，最大20
+            </td>
+            <td align="center" style="box-sizing: border-box; padding: 6px 13px; border-color: rgb(223, 226, 229);">
+                20
+            </td>
+        </tr>
+        <tr style="box-sizing: border-box; background-color: rgb(246, 248, 250); border-top: 1px solid rgb(198, 203, 209);">
+            <td align="center" style="box-sizing: border-box; padding: 6px 13px; border-color: rgb(223, 226, 229);">
+                api_key
+            </td>
+            <td align="center" style="box-sizing: border-box; padding: 6px 13px; border-color: rgb(223, 226, 229);">
+                String
+            </td>
+            <td align="center" style="box-sizing: border-box; padding: 6px 13px; border-color: rgb(223, 226, 229);">
+                <span style="box-sizing: border-box; font-weight: 600;">是</span>
+            </td>
+            <td align="center" style="box-sizing: border-box; padding: 6px 13px; border-color: rgb(223, 226, 229);">
+                用户apikey
+            </td>
+            <td align="center" style="box-sizing: border-box; padding: 6px 13px; border-color: rgb(223, 226, 229);">
+                5b092b11-001c-4e50-9d8e-00f9db752241
+            </td>
+        </tr>
+        <tr style="box-sizing: border-box; border-top: 1px solid rgb(198, 203, 209);">
+            <td align="center" style="box-sizing: border-box; padding: 6px 13px; border-color: rgb(223, 226, 229);">
+                timestamp
+            </td>
+            <td align="center" style="box-sizing: border-box; padding: 6px 13px; border-color: rgb(223, 226, 229);">
+                long
+            </td>
+            <td align="center" style="box-sizing: border-box; padding: 6px 13px; border-color: rgb(223, 226, 229);">
+                <span style="box-sizing: border-box; font-weight: 600;">是</span>
+            </td>
+            <td align="center" style="box-sizing: border-box; padding: 6px 13px; border-color: rgb(223, 226, 229);">
+                时间戳精确到秒
+            </td>
+            <td align="center" style="box-sizing: border-box; padding: 6px 13px; border-color: rgb(223, 226, 229);">
+                1540619752
+            </td>
+        </tr>
+        <tr style="box-sizing: border-box; background-color: rgb(246, 248, 250); border-top: 1px solid rgb(198, 203, 209);">
+            <td align="center" style="box-sizing: border-box; padding: 6px 13px; border-color: rgb(223, 226, 229);">
+                sign_type
+            </td>
+            <td align="center" style="box-sizing: border-box; padding: 6px 13px; border-color: rgb(223, 226, 229);">
+                String
+            </td>
+            <td align="center" style="box-sizing: border-box; padding: 6px 13px; border-color: rgb(223, 226, 229);">
+                <span style="box-sizing: border-box; font-weight: 600;">是</span>
+            </td>
+            <td align="center" style="box-sizing: border-box; padding: 6px 13px; border-color: rgb(223, 226, 229);">
+                签名类型
+            </td>
+            <td align="center" style="box-sizing: border-box; padding: 6px 13px; border-color: rgb(223, 226, 229);">
+                MD5
+            </td>
+        </tr>
+        <tr style="box-sizing: border-box; border-top: 1px solid rgb(198, 203, 209);">
+            <td align="center" style="box-sizing: border-box; padding: 6px 13px; border-color: rgb(223, 226, 229);">
+                sign
+            </td>
+            <td align="center" style="box-sizing: border-box; padding: 6px 13px; border-color: rgb(223, 226, 229);">
+                String
+            </td>
+            <td align="center" style="box-sizing: border-box; padding: 6px 13px; border-color: rgb(223, 226, 229);">
+                否
+            </td>
+            <td align="center" style="box-sizing: border-box; padding: 6px 13px; border-color: rgb(223, 226, 229);">
+                具体查看<a href="sign.html" style="box-sizing: border-box; background-color: transparent; color: rgb(3, 102, 214); text-decoration-line: none;">签名认证</a>
+            </td>
+            <td align="center" style="box-sizing: border-box; padding: 6px 13px; border-color: rgb(223, 226, 229);">
+                3cbbe236e86105b1a041cfe1fe01
+            </td>
+        </tr>
+    </tbody>
+</table>
+<p style="box-sizing: border-box; margin-bottom: 16px; margin-top: 0px;">
+    4.返回参数
+</p>
+<table width="960" border="1">
+    <thead style="box-sizing: border-box;">
+        <tr style="box-sizing: border-box; border-top: 1px solid rgb(198, 203, 209);" class="firstRow">
+            <th align="center" style="box-sizing: border-box; padding: 6px 13px; border-color: rgb(223, 226, 229);">
+                参数
+            </th>
+            <th align="center" style="box-sizing: border-box; padding: 6px 13px; border-color: rgb(223, 226, 229);">
+                类型
+            </th>
+            <th align="center" style="box-sizing: border-box; padding: 6px 13px; border-color: rgb(223, 226, 229);">
+                描述
+            </th>
+            <th align="center" style="box-sizing: border-box; padding: 6px 13px; border-color: rgb(223, 226, 229);">
+                示例
+            </th>
+        </tr>
+    </thead>
+    <tbody style="box-sizing: border-box;">
+        <tr style="box-sizing: border-box; border-top: 1px solid rgb(198, 203, 209);">
+            <td align="center" style="box-sizing: border-box; padding: 6px 13px; border-color: rgb(223, 226, 229);">
+                state
+            </td>
+            <td align="center" style="box-sizing: border-box; padding: 6px 13px; border-color: rgb(223, 226, 229);">
+                Integer
+            </td>
+            <td align="center" style="box-sizing: border-box; padding: 6px 13px; border-color: rgb(223, 226, 229);">
+                请求状态1成功，-1失败
+            </td>
+            <td align="center" style="box-sizing: border-box; padding: 6px 13px; border-color: rgb(223, 226, 229);">
+                1
+            </td>
+        </tr>
+        <tr style="box-sizing: border-box; background-color: rgb(246, 248, 250); border-top: 1px solid rgb(198, 203, 209);">
+            <td align="center" style="box-sizing: border-box; padding: 6px 13px; border-color: rgb(223, 226, 229);">
+                msg
+            </td>
+            <td align="center" style="box-sizing: border-box; padding: 6px 13px; border-color: rgb(223, 226, 229);">
+                String
+            </td>
+            <td align="center" style="box-sizing: border-box; padding: 6px 13px; border-color: rgb(223, 226, 229);">
+                请求状态说明
+            </td>
+            <td align="center" style="box-sizing: border-box; padding: 6px 13px; border-color: rgb(223, 226, 229);">
+                success
+            </td>
+        </tr>
+        <tr style="box-sizing: border-box; border-top: 1px solid rgb(198, 203, 209);">
+            <td align="center" style="box-sizing: border-box; padding: 6px 13px; border-color: rgb(223, 226, 229);">
+                trades
+            </td>
+            <td align="center" style="box-sizing: border-box; padding: 6px 13px; border-color: rgb(223, 226, 229);">
+                array
+            </td>
+            <td align="center" style="box-sizing: border-box; padding: 6px 13px; border-color: rgb(223, 226, 229);">
+                交易明细
+            </td>
+            <td align="center" style="box-sizing: border-box; padding: 6px 13px; border-color: rgb(223, 226, 229);">
+                略
+            </td>
+        </tr>
+        <tr style="box-sizing: border-box; background-color: rgb(246, 248, 250); border-top: 1px solid rgb(198, 203, 209);">
+            <td align="center" style="box-sizing: border-box; padding: 6px 13px; border-color: rgb(223, 226, 229);">
+                total
+            </td>
+            <td align="center" style="box-sizing: border-box; padding: 6px 13px; border-color: rgb(223, 226, 229);">
+                int
+            </td>
+            <td align="center" style="box-sizing: border-box; padding: 6px 13px; border-color: rgb(223, 226, 229);">
+                返回的数量
+            </td>
+            <td align="center" style="box-sizing: border-box; padding: 6px 13px; border-color: rgb(223, 226, 229);">
+                1
+            </td>
+        </tr>
+    </tbody>
+</table>
+<p style="box-sizing: border-box; margin-bottom: 16px; margin-top: 0px;">
+    5.请求成功
+</p>
+<pre style="box-sizing: border-box; font-family: SFMono-Regular, Consolas, &quot;Liberation Mono&quot;, Menlo, Courier, monospace; font-size: 13.6px; margin-bottom: 16px; margin-top: 0px; overflow-wrap: normal; background-color: rgb(246, 248, 250); border-radius: 3px; line-height: 1.45; overflow: auto; padding: 16px;">{
+ state: 1,
+ msg: "success",
+ trades: [{略},{略},{略}],
+ total: 0
+}</pre>
+<p style="box-sizing: border-box; margin-bottom: 16px; margin-top: 0px;">
+    6.请求失败
+</p>
+<pre style="box-sizing: border-box; font-family: SFMono-Regular, Consolas, &quot;Liberation Mono&quot;, Menlo, Courier, monospace; font-size: 13.6px; margin-bottom: 0px !important; margin-top: 0px; overflow-wrap: normal; background-color: rgb(246, 248, 250); border-radius: 3px; line-height: 1.45; overflow: auto; padding: 16px;">{
+ state: -1,
+ msg: "ILLEGAL_TIMESTAMP",
+ trades: null,
+ total: 0
+}</pre>
+<p>
+    <br>
+</p></li><li style="display: none;"><h1 class="flex-auto min-width-0 mb-2 mb-md-0 mr-0 mr-md-2 gh-header-title instapaper_title" style="box-sizing: border-box; font-size: 32px; margin: 0px 150px 0px 0px; font-weight: 400; flex: 1 1 auto !important; min-width: 0px !important; line-height: 1.125; overflow-wrap: break-word;">
+    获取单个币的资产<br>
+</h1>
+<p style="box-sizing: border-box; margin-bottom: 16px; margin-top: 0px !important;">
+    1.请求URL：<a href="http://www.blackhorse.pro/a/api/account/{currency}/{api_key}/{timestamp}/{sign_type}/{sign}" target="_self">http://www.blackhorse.pro/a/api/account/{currency}/{api_key}/{timestamp}/{sign_type}/{sign}</a>
+</p>
+<p style="box-sizing: border-box; margin-bottom: 16px; margin-top: 0px;">
+    2.请求类型：GET
+</p>
+<p style="box-sizing: border-box; margin-bottom: 16px; margin-top: 0px;">
+    3.请求参数：
+</p>
+<table width="960" border="1">
+    <thead style="box-sizing: border-box;">
+        <tr style="box-sizing: border-box; border-top: 1px solid rgb(198, 203, 209);" class="firstRow">
+            <th align="center" style="box-sizing: border-box; padding: 6px 13px; border-color: rgb(223, 226, 229);">
+                参数
+            </th>
+            <th align="center" style="box-sizing: border-box; padding: 6px 13px; border-color: rgb(223, 226, 229);">
+                类型
+            </th>
+            <th align="center" style="box-sizing: border-box; padding: 6px 13px; border-color: rgb(223, 226, 229);">
+                是否参与签名
+            </th>
+            <th align="center" style="box-sizing: border-box; padding: 6px 13px; border-color: rgb(223, 226, 229);">
+                描述
+            </th>
+            <th align="center" style="box-sizing: border-box; padding: 6px 13px; border-color: rgb(223, 226, 229);">
+                示例
+            </th>
+        </tr>
+    </thead>
+    <tbody style="box-sizing: border-box;">
+        <tr style="box-sizing: border-box; border-top: 1px solid rgb(198, 203, 209);">
+            <td align="center" style="box-sizing: border-box; padding: 6px 13px; border-color: rgb(223, 226, 229);">
+                currency
+            </td>
+            <td align="center" style="box-sizing: border-box; padding: 6px 13px; border-color: rgb(223, 226, 229);">
+                String
+            </td>
+            <td align="center" style="box-sizing: border-box; padding: 6px 13px; border-color: rgb(223, 226, 229);">
+                否
+            </td>
+            <td align="center" style="box-sizing: border-box; padding: 6px 13px; border-color: rgb(223, 226, 229);">
+                货币名称
+            </td>
+            <td align="center" style="box-sizing: border-box; padding: 6px 13px; border-color: rgb(223, 226, 229);">
+                ETH
+            </td>
+        </tr>
+        <tr style="box-sizing: border-box; background-color: rgb(246, 248, 250); border-top: 1px solid rgb(198, 203, 209);">
+            <td align="center" style="box-sizing: border-box; padding: 6px 13px; border-color: rgb(223, 226, 229);">
+                api_key
+            </td>
+            <td align="center" style="box-sizing: border-box; padding: 6px 13px; border-color: rgb(223, 226, 229);">
+                String
+            </td>
+            <td align="center" style="box-sizing: border-box; padding: 6px 13px; border-color: rgb(223, 226, 229);">
+                <span style="box-sizing: border-box; font-weight: 600;">是</span>
+            </td>
+            <td align="center" style="box-sizing: border-box; padding: 6px 13px; border-color: rgb(223, 226, 229);">
+                用户apikey
+            </td>
+            <td align="center" style="box-sizing: border-box; padding: 6px 13px; border-color: rgb(223, 226, 229);">
+                5b092b11-001c-4e50-9d8e-00f9db752241
+            </td>
+        </tr>
+        <tr style="box-sizing: border-box; border-top: 1px solid rgb(198, 203, 209);">
+            <td align="center" style="box-sizing: border-box; padding: 6px 13px; border-color: rgb(223, 226, 229);">
+                timestamp
+            </td>
+            <td align="center" style="box-sizing: border-box; padding: 6px 13px; border-color: rgb(223, 226, 229);">
+                long
+            </td>
+            <td align="center" style="box-sizing: border-box; padding: 6px 13px; border-color: rgb(223, 226, 229);">
+                <span style="box-sizing: border-box; font-weight: 600;">是</span>
+            </td>
+            <td align="center" style="box-sizing: border-box; padding: 6px 13px; border-color: rgb(223, 226, 229);">
+                时间戳精确到秒
+            </td>
+            <td align="center" style="box-sizing: border-box; padding: 6px 13px; border-color: rgb(223, 226, 229);">
+                1540619752
+            </td>
+        </tr>
+        <tr style="box-sizing: border-box; background-color: rgb(246, 248, 250); border-top: 1px solid rgb(198, 203, 209);">
+            <td align="center" style="box-sizing: border-box; padding: 6px 13px; border-color: rgb(223, 226, 229);">
+                sign_type
+            </td>
+            <td align="center" style="box-sizing: border-box; padding: 6px 13px; border-color: rgb(223, 226, 229);">
+                String
+            </td>
+            <td align="center" style="box-sizing: border-box; padding: 6px 13px; border-color: rgb(223, 226, 229);">
+                <span style="box-sizing: border-box; font-weight: 600;">是</span>
+            </td>
+            <td align="center" style="box-sizing: border-box; padding: 6px 13px; border-color: rgb(223, 226, 229);">
+                签名类型
+            </td>
+            <td align="center" style="box-sizing: border-box; padding: 6px 13px; border-color: rgb(223, 226, 229);">
+                MD5
+            </td>
+        </tr>
+        <tr style="box-sizing: border-box; border-top: 1px solid rgb(198, 203, 209);">
+            <td align="center" style="box-sizing: border-box; padding: 6px 13px; border-color: rgb(223, 226, 229);">
+                sign
+            </td>
+            <td align="center" style="box-sizing: border-box; padding: 6px 13px; border-color: rgb(223, 226, 229);">
+                String
+            </td>
+            <td align="center" style="box-sizing: border-box; padding: 6px 13px; border-color: rgb(223, 226, 229);">
+                否
+            </td>
+            <td align="center" style="box-sizing: border-box; padding: 6px 13px; border-color: rgb(223, 226, 229);">
+                具体查看<a href="sign.html" style="box-sizing: border-box; background-color: transparent; color: rgb(3, 102, 214); text-decoration-line: none;">签名认证</a>
+            </td>
+            <td align="center" style="box-sizing: border-box; padding: 6px 13px; border-color: rgb(223, 226, 229);">
+                3cbbe236e86105b1a041cfe1fe01
+            </td>
+        </tr>
+    </tbody>
+</table>
+<p style="box-sizing: border-box; margin-bottom: 16px; margin-top: 0px;">
+    4.返回参数
+</p>
+<table width="960" border="1">
+    <thead style="box-sizing: border-box;">
+        <tr style="box-sizing: border-box; border-top: 1px solid rgb(198, 203, 209);" class="firstRow">
+            <th align="center" style="box-sizing: border-box; padding: 6px 13px; border-color: rgb(223, 226, 229);">
+                参数
+            </th>
+            <th align="center" style="box-sizing: border-box; padding: 6px 13px; border-color: rgb(223, 226, 229);">
+                类型
+            </th>
+            <th align="center" style="box-sizing: border-box; padding: 6px 13px; border-color: rgb(223, 226, 229);">
+                描述
+            </th>
+            <th align="center" style="box-sizing: border-box; padding: 6px 13px; border-color: rgb(223, 226, 229);">
+                示例
+            </th>
+        </tr>
+    </thead>
+    <tbody style="box-sizing: border-box;">
+        <tr style="box-sizing: border-box; border-top: 1px solid rgb(198, 203, 209);">
+            <td align="center" style="box-sizing: border-box; padding: 6px 13px; border-color: rgb(223, 226, 229);">
+                state
+            </td>
+            <td align="center" style="box-sizing: border-box; padding: 6px 13px; border-color: rgb(223, 226, 229);">
+                Integer
+            </td>
+            <td align="center" style="box-sizing: border-box; padding: 6px 13px; border-color: rgb(223, 226, 229);">
+                请求状态1成功，-1失败
+            </td>
+            <td align="center" style="box-sizing: border-box; padding: 6px 13px; border-color: rgb(223, 226, 229);">
+                1
+            </td>
+        </tr>
+        <tr style="box-sizing: border-box; background-color: rgb(246, 248, 250); border-top: 1px solid rgb(198, 203, 209);">
+            <td align="center" style="box-sizing: border-box; padding: 6px 13px; border-color: rgb(223, 226, 229);">
+                msg
+            </td>
+            <td align="center" style="box-sizing: border-box; padding: 6px 13px; border-color: rgb(223, 226, 229);">
+                String
+            </td>
+            <td align="center" style="box-sizing: border-box; padding: 6px 13px; border-color: rgb(223, 226, 229);">
+                请求状态说明
+            </td>
+            <td align="center" style="box-sizing: border-box; padding: 6px 13px; border-color: rgb(223, 226, 229);">
+                success
+            </td>
+        </tr>
+        <tr style="box-sizing: border-box; border-top: 1px solid rgb(198, 203, 209);">
+            <td align="center" style="box-sizing: border-box; padding: 6px 13px; border-color: rgb(223, 226, 229);">
+                account
+            </td>
+            <td align="center" style="box-sizing: border-box; padding: 6px 13px; border-color: rgb(223, 226, 229);">
+                Object
+            </td>
+            <td align="center" style="box-sizing: border-box; padding: 6px 13px; border-color: rgb(223, 226, 229);">
+                账户明细
+            </td>
+            <td align="center" style="box-sizing: border-box; padding: 6px 13px; border-color: rgb(223, 226, 229);">
+                略
+            </td>
+        </tr>
+    </tbody>
+</table>
+<p style="box-sizing: border-box; margin-bottom: 16px; margin-top: 0px;">
+    5.请求成功示例
+</p>
+<pre style="box-sizing: border-box; font-family: SFMono-Regular, Consolas, &quot;Liberation Mono&quot;, Menlo, Courier, monospace; font-size: 13.6px; margin-bottom: 16px; margin-top: 0px; overflow-wrap: normal; background-color: rgb(246, 248, 250); border-radius: 3px; line-height: 1.45; overflow: auto; padding: 16px;">{
+ state: 1,
+ msg: "success",
+    account: {
+    currency: "ETH",
+    total_balance: 0,
+    rozen_balance: 0,
+    available_balance: 0
+   }
+}</pre>
+<p style="box-sizing: border-box; margin-bottom: 16px; margin-top: 0px;">
+    6.请求失败示例
+</p>
+<pre style="box-sizing: border-box; font-family: SFMono-Regular, Consolas, &quot;Liberation Mono&quot;, Menlo, Courier, monospace; font-size: 13.6px; margin-bottom: 0px !important; margin-top: 0px; overflow-wrap: normal; background-color: rgb(246, 248, 250); border-radius: 3px; line-height: 1.45; overflow: auto; padding: 16px;">{
+ state: -1,
+ msg: "ILLEGAL_TIMESTAMP",
+ trades: null
+}</pre>
+<p>
+    <br>
+</p></li><li style="display: none;"><h1 class="flex-auto min-width-0 mb-2 mb-md-0 mr-0 mr-md-2 gh-header-title instapaper_title" style="box-sizing: border-box; font-size: 32px; margin: 0px 150px 0px 0px; font-weight: 400; flex: 1 1 auto !important; min-width: 0px !important; line-height: 1.125; overflow-wrap: break-word;">
+    获得会员资产列表
+</h1>
+<p style="box-sizing: border-box; margin-bottom: 16px; margin-top: 0px !important;">
+    1.请求URL：<a href="http://www.blackhorse.pro/a/api/accounts/{api_key}/{timestamp}/{sign_type}/{sign}" target="_self">http://www.blackhorse.pro/a/api/accounts/{api_key}/{timestamp}/{sign_type}/{sign}</a>
+</p>
+<p style="box-sizing: border-box; margin-bottom: 16px; margin-top: 0px;">
+    <a href="http://www.blackhorse.pro/a/api/accounts/{api_key}/{timestamp}/{sign_type}/{sign}" target="_self">2.请求类型：GET</a>
+</p>
+<p style="box-sizing: border-box; margin-bottom: 16px; margin-top: 0px;">
+    3.请求参数：
+</p>
+<table width="960" border="1">
+    <thead style="box-sizing: border-box;">
+        <tr style="box-sizing: border-box; border-top: 1px solid rgb(198, 203, 209);" class="firstRow">
+            <th align="center" style="box-sizing: border-box; padding: 6px 13px; border-color: rgb(223, 226, 229);">
+                参数
+            </th>
+            <th align="center" style="box-sizing: border-box; padding: 6px 13px; border-color: rgb(223, 226, 229);">
+                类型
+            </th>
+            <th align="center" style="box-sizing: border-box; padding: 6px 13px; border-color: rgb(223, 226, 229);">
+                是否参与签名
+            </th>
+            <th align="center" style="box-sizing: border-box; padding: 6px 13px; border-color: rgb(223, 226, 229);">
+                描述
+            </th>
+            <th align="center" style="box-sizing: border-box; padding: 6px 13px; border-color: rgb(223, 226, 229);">
+                示例
+            </th>
+        </tr>
+    </thead>
+    <tbody style="box-sizing: border-box;">
+        <tr style="box-sizing: border-box; border-top: 1px solid rgb(198, 203, 209);">
+            <td align="center" style="box-sizing: border-box; padding: 6px 13px; border-color: rgb(223, 226, 229);">
+                api_key
+            </td>
+            <td align="center" style="box-sizing: border-box; padding: 6px 13px; border-color: rgb(223, 226, 229);">
+                String
+            </td>
+            <td align="center" style="box-sizing: border-box; padding: 6px 13px; border-color: rgb(223, 226, 229);">
+                <span style="box-sizing: border-box; font-weight: 600;">是</span>
+            </td>
+            <td align="center" style="box-sizing: border-box; padding: 6px 13px; border-color: rgb(223, 226, 229);">
+                用户apikey
+            </td>
+            <td align="center" style="box-sizing: border-box; padding: 6px 13px; border-color: rgb(223, 226, 229);">
+                5b092b11-001c-4e50-9d8e-00f9db752241
+            </td>
+        </tr>
+        <tr style="box-sizing: border-box; background-color: rgb(246, 248, 250); border-top: 1px solid rgb(198, 203, 209);">
+            <td align="center" style="box-sizing: border-box; padding: 6px 13px; border-color: rgb(223, 226, 229);">
+                timestamp
+            </td>
+            <td align="center" style="box-sizing: border-box; padding: 6px 13px; border-color: rgb(223, 226, 229);">
+                long
+            </td>
+            <td align="center" style="box-sizing: border-box; padding: 6px 13px; border-color: rgb(223, 226, 229);">
+                <span style="box-sizing: border-box; font-weight: 600;">是</span>
+            </td>
+            <td align="center" style="box-sizing: border-box; padding: 6px 13px; border-color: rgb(223, 226, 229);">
+                时间戳精确到秒
+            </td>
+            <td align="center" style="box-sizing: border-box; padding: 6px 13px; border-color: rgb(223, 226, 229);">
+                1540619752
+            </td>
+        </tr>
+        <tr style="box-sizing: border-box; border-top: 1px solid rgb(198, 203, 209);">
+            <td align="center" style="box-sizing: border-box; padding: 6px 13px; border-color: rgb(223, 226, 229);">
+                sign_type
+            </td>
+            <td align="center" style="box-sizing: border-box; padding: 6px 13px; border-color: rgb(223, 226, 229);">
+                String
+            </td>
+            <td align="center" style="box-sizing: border-box; padding: 6px 13px; border-color: rgb(223, 226, 229);">
+                <span style="box-sizing: border-box; font-weight: 600;">是</span>
+            </td>
+            <td align="center" style="box-sizing: border-box; padding: 6px 13px; border-color: rgb(223, 226, 229);">
+                签名类型
+            </td>
+            <td align="center" style="box-sizing: border-box; padding: 6px 13px; border-color: rgb(223, 226, 229);">
+                MD5
+            </td>
+        </tr>
+        <tr style="box-sizing: border-box; background-color: rgb(246, 248, 250); border-top: 1px solid rgb(198, 203, 209);">
+            <td align="center" style="box-sizing: border-box; padding: 6px 13px; border-color: rgb(223, 226, 229);">
+                sign
+            </td>
+            <td align="center" style="box-sizing: border-box; padding: 6px 13px; border-color: rgb(223, 226, 229);">
+                String
+            </td>
+            <td align="center" style="box-sizing: border-box; padding: 6px 13px; border-color: rgb(223, 226, 229);">
+                否
+            </td>
+            <td align="center" style="box-sizing: border-box; padding: 6px 13px; border-color: rgb(223, 226, 229);">
+                具体查看<a href="sign.html" style="box-sizing: border-box; background-color: transparent; color: rgb(3, 102, 214); text-decoration-line: none;">签名认证</a>
+            </td>
+            <td align="center" style="box-sizing: border-box; padding: 6px 13px; border-color: rgb(223, 226, 229);">
+                3cbbe236e86105b1a041cfe1fe01
+            </td>
+        </tr>
+    </tbody>
+</table>
+<p style="box-sizing: border-box; margin-bottom: 16px; margin-top: 0px;">
+    4.返回参数
+</p>
+<table width="960" border="1">
+    <thead style="box-sizing: border-box;">
+        <tr style="box-sizing: border-box; border-top: 1px solid rgb(198, 203, 209);" class="firstRow">
+            <th align="center" style="box-sizing: border-box; padding: 6px 13px; border-color: rgb(223, 226, 229);">
+                参数
+            </th>
+            <th align="center" style="box-sizing: border-box; padding: 6px 13px; border-color: rgb(223, 226, 229);">
+                类型
+            </th>
+            <th align="center" style="box-sizing: border-box; padding: 6px 13px; border-color: rgb(223, 226, 229);">
+                描述
+            </th>
+            <th align="center" style="box-sizing: border-box; padding: 6px 13px; border-color: rgb(223, 226, 229);">
+                示例
+            </th>
+        </tr>
+    </thead>
+    <tbody style="box-sizing: border-box;">
+        <tr style="box-sizing: border-box; border-top: 1px solid rgb(198, 203, 209);">
+            <td align="center" style="box-sizing: border-box; padding: 6px 13px; border-color: rgb(223, 226, 229);">
+                state
+            </td>
+            <td align="center" style="box-sizing: border-box; padding: 6px 13px; border-color: rgb(223, 226, 229);">
+                Integer
+            </td>
+            <td align="center" style="box-sizing: border-box; padding: 6px 13px; border-color: rgb(223, 226, 229);">
+                请求状态1成功，-1失败
+            </td>
+            <td align="center" style="box-sizing: border-box; padding: 6px 13px; border-color: rgb(223, 226, 229);">
+                1
+            </td>
+        </tr>
+        <tr style="box-sizing: border-box; background-color: rgb(246, 248, 250); border-top: 1px solid rgb(198, 203, 209);">
+            <td align="center" style="box-sizing: border-box; padding: 6px 13px; border-color: rgb(223, 226, 229);">
+                msg
+            </td>
+            <td align="center" style="box-sizing: border-box; padding: 6px 13px; border-color: rgb(223, 226, 229);">
+                String
+            </td>
+            <td align="center" style="box-sizing: border-box; padding: 6px 13px; border-color: rgb(223, 226, 229);">
+                请求状态说明
+            </td>
+            <td align="center" style="box-sizing: border-box; padding: 6px 13px; border-color: rgb(223, 226, 229);">
+                success
+            </td>
+        </tr>
+        <tr style="box-sizing: border-box; border-top: 1px solid rgb(198, 203, 209);">
+            <td align="center" style="box-sizing: border-box; padding: 6px 13px; border-color: rgb(223, 226, 229);">
+                accounts
+            </td>
+            <td align="center" style="box-sizing: border-box; padding: 6px 13px; border-color: rgb(223, 226, 229);">
+                array
+            </td>
+            <td align="center" style="box-sizing: border-box; padding: 6px 13px; border-color: rgb(223, 226, 229);">
+                交易明细
+            </td>
+            <td align="center" style="box-sizing: border-box; padding: 6px 13px; border-color: rgb(223, 226, 229);">
+                略
+            </td>
+        </tr>
+        <tr style="box-sizing: border-box; background-color: rgb(246, 248, 250); border-top: 1px solid rgb(198, 203, 209);">
+            <td align="center" style="box-sizing: border-box; padding: 6px 13px; border-color: rgb(223, 226, 229);">
+                currencys
+            </td>
+            <td align="center" style="box-sizing: border-box; padding: 6px 13px; border-color: rgb(223, 226, 229);">
+                ---
+            </td>
+            <td align="center" style="box-sizing: border-box; padding: 6px 13px; border-color: rgb(223, 226, 229);">
+                ---
+            </td>
+            <td align="center" style="box-sizing: border-box; padding: 6px 13px; border-color: rgb(223, 226, 229);">
+                ---
+            </td>
+        </tr>
+    </tbody>
+</table>
+<p style="box-sizing: border-box; margin-bottom: 16px; margin-top: 0px;">
+    5.请求成功示例
+</p>
+<pre style="box-sizing: border-box; font-family: SFMono-Regular, Consolas, &quot;Liberation Mono&quot;, Menlo, Courier, monospace; font-size: 13.6px; margin-bottom: 16px; margin-top: 0px; overflow-wrap: normal; background-color: rgb(246, 248, 250); border-radius: 3px; line-height: 1.45; overflow: auto; padding: 16px;">{
+  state: 1,
+  msg: "success",
+  accounts: [
+  {
+    currency: "PMD",
+    total_balance: 3.992,
+    frozen_balance: 2,
+    balance: 1.992
+  },
+  {
+    currency: "PWRC",
+    total_balance: 0.998,
+    frozen_balance: 0,
+    balance: 0.998
+  },
+  {
+    currency: "QC",
+    total_balance: 546.58,
+    frozen_balance: 513.1,
+    balance: 33.48
+  }
+  ],
+  currencys: null
+}</pre>
+<p style="box-sizing: border-box; margin-bottom: 16px; margin-top: 0px;">
+    6.请求失败
+</p>
+<pre style="box-sizing: border-box; font-family: SFMono-Regular, Consolas, &quot;Liberation Mono&quot;, Menlo, Courier, monospace; font-size: 13.6px; margin-bottom: 0px !important; margin-top: 0px; overflow-wrap: normal; background-color: rgb(246, 248, 250); border-radius: 3px; line-height: 1.45; overflow: auto; padding: 16px;">{
+  state: -1,
+  msg: "ILLEGAL_TIMESTAMP",
+  accounts: null,
+  currencys: null
+}</pre>
+<p>
+    <br>
+</p></li><li style="display: none;"><h1 class="flex-auto min-width-0 mb-2 mb-md-0 mr-0 mr-md-2 gh-header-title instapaper_title" style="box-sizing: border-box; font-size: 32px; margin: 0px 150px 0px 0px; font-weight: 400; flex: 1 1 auto !important; min-width: 0px !important; line-height: 1.125; overflow-wrap: break-word;">
+    <span style="">获取所有行情汇总<br></span>
+</h1>
+<p style="box-sizing: border-box; margin-bottom: 16px; margin-top: 0px !important;">
+    <span style=""><span style="">1.请求URL：</span></span><a href="http://www.blackhorse.pro/m/allticker/{ts}" target="_self"><span style=""><span style="">http</span><span style="">：//www.blackhorse.pro/m/allticker/&nbsp;</span><span style="">{</span><span style="">&nbsp;ts&nbsp;</span></span>}</a>
+</p>
+<p style="box-sizing: border-box; margin-bottom: 16px; margin-top: 0px;">
+    <span style="">2.请求类型：GET</span>
+</p>
+<p style="box-sizing: border-box; margin-bottom: 16px; margin-top: 0px;">
+    <span style="">3.请求参数：</span>
+</p>
+<table width="960" border="1" style="width: 826px;">
+    <thead style="box-sizing: border-box;">
+        <tr style="box-sizing: border-box; border-top: 1px solid rgb(198, 203, 209);" class="firstRow">
+            <th align="center" style="box-sizing: border-box; padding: 6px 13px; border-color: rgb(223, 226, 229);">
+                <span style=""><span style="">参数</span></span>
+            </th>
+            <th align="center" style="box-sizing: border-box; padding: 6px 13px; border-color: rgb(223, 226, 229);">
+                <span style=""><span style="">类型</span></span>
+            </th>
+            <th align="center" style="box-sizing: border-box; padding: 6px 13px; border-color: rgb(223, 226, 229);">
+                <span style=""><span style="">描述</span></span>
+            </th>
+            <th align="center" style="box-sizing: border-box; padding: 6px 13px; border-color: rgb(223, 226, 229);">
+                <span style=""><span style="">示例</span></span>
+            </th>
+        </tr>
+    </thead>
+    <tbody style="box-sizing: border-box;">
+        <tr style="box-sizing: border-box; border-top: 1px solid rgb(198, 203, 209);">
+            <td align="center" style="box-sizing: border-box; padding: 6px 13px; border-color: rgb(223, 226, 229);">
+                <span style=""><span style="">TS</span></span>
+            </td>
+            <td align="center" style="box-sizing: border-box; padding: 6px 13px; border-color: rgb(223, 226, 229);">
+                <span style=""><span style="">长</span></span>
+            </td>
+            <td align="center" style="box-sizing: border-box; padding: 6px 13px; border-color: rgb(223, 226, 229);">
+                <span style=""><span style="">时间戳精确到秒</span></span>
+            </td>
+            <td align="center" style="box-sizing: border-box; padding: 6px 13px; border-color: rgb(223, 226, 229);">
+                <span style=""><span style="">1540619752</span></span>
+            </td>
+        </tr>
+    </tbody>
+</table>
+<p style="box-sizing: border-box; margin-bottom: 16px; margin-top: 0px;">
+    <span style="">4.返回参数</span>
+</p>
+<table width="960" border="1">
+    <thead style="box-sizing: border-box;">
+        <tr style="box-sizing: border-box; border-top: 1px solid rgb(198, 203, 209);" class="firstRow">
+            <th align="center" style="box-sizing: border-box; padding: 6px 13px; border-color: rgb(223, 226, 229);">
+                <span style=""><span style="">参数</span></span>
+            </th>
+            <th align="center" style="box-sizing: border-box; padding: 6px 13px; border-color: rgb(223, 226, 229);">
+                <span style=""><span style="">类型</span></span>
+            </th>
+            <th align="center" style="box-sizing: border-box; padding: 6px 13px; border-color: rgb(223, 226, 229);">
+                <span style=""><span style="">描述</span></span>
+            </th>
+            <th align="center" style="box-sizing: border-box; padding: 6px 13px; border-color: rgb(223, 226, 229);">
+                <span style=""><span style="">示例</span></span>
+            </th>
+        </tr>
+    </thead>
+    <tbody style="box-sizing: border-box;">
+        <tr style="box-sizing: border-box; border-top: 1px solid rgb(198, 203, 209);">
+            <td align="center" style="box-sizing: border-box; padding: 6px 13px; border-color: rgb(223, 226, 229);">
+                <span style=""><span style=""><span style="font-family: &quot;Microsoft YaHei&quot;; font-size: medium; text-align: -webkit-center;">state</span></span></span>
+            </td>
+            <td align="center" style="box-sizing: border-box; padding: 6px 13px; border-color: rgb(223, 226, 229);">
+                <span style=""><span style=""><span style="color: rgb(36, 41, 46); font-family: -apple-system, BlinkMacSystemFont, &quot;Segoe UI&quot;, Helvetica, Arial, sans-serif, &quot;Apple Color Emoji&quot;, &quot;Segoe UI Emoji&quot;, &quot;Segoe UI Symbol&quot;; text-align: -webkit-center; background-color: rgb(255, 255, 255);">Integer</span></span></span>
+            </td>
+            <td align="center" style="box-sizing: border-box; padding: 6px 13px; border-color: rgb(223, 226, 229);">
+                <span style=""><span style="">请求状态1成功，-1失败</span></span>
+            </td>
+            <td align="center" style="box-sizing: border-box; padding: 6px 13px; border-color: rgb(223, 226, 229);">
+                <span style=""><span style="">1</span></span>
+            </td>
+        </tr>
+        <tr style="box-sizing: border-box; background-color: rgb(246, 248, 250); border-top: 1px solid rgb(198, 203, 209);">
+            <td align="center" style="box-sizing: border-box; padding: 6px 13px; border-color: rgb(223, 226, 229);">
+                <span style=""><span style=""><span style="color: rgb(36, 41, 46); font-family: -apple-system, BlinkMacSystemFont, &quot;Segoe UI&quot;, Helvetica, Arial, sans-serif, &quot;Apple Color Emoji&quot;, &quot;Segoe UI Emoji&quot;, &quot;Segoe UI Symbol&quot;; text-align: -webkit-center; background-color: rgb(246, 248, 250);">msg</span></span></span>
+            </td>
+            <td align="center" style="box-sizing: border-box; padding: 6px 13px; border-color: rgb(223, 226, 229);">
+                <span style=""><span style="">string</span></span>
+            </td>
+            <td align="center" style="box-sizing: border-box; padding: 6px 13px; border-color: rgb(223, 226, 229);">
+                <span style=""><span style="">请求状态说明</span></span>
+            </td>
+            <td align="center" style="box-sizing: border-box; padding: 6px 13px; border-color: rgb(223, 226, 229);">
+                <span style=""><span style="">成功</span></span>
+            </td>
+        </tr>
+        <tr style="box-sizing: border-box; border-top: 1px solid rgb(198, 203, 209);">
+            <td align="center" style="box-sizing: border-box; padding: 6px 13px; border-color: rgb(223, 226, 229);">
+                <span style=""><span style="">data</span></span>
+            </td>
+            <td align="center" style="box-sizing: border-box; padding: 6px 13px; border-color: rgb(223, 226, 229);">
+                object
+            </td>
+            <td align="center" style="box-sizing: border-box; padding: 6px 13px; border-color: rgb(223, 226, 229);">
+                <span style=""><span style="">所有交易对行情</span></span>
+            </td>
+            <td align="center" style="box-sizing: border-box; padding: 6px 13px; border-color: rgb(223, 226, 229);">
+                <span style=""><span style="">略</span></span>
+            </td>
+        </tr>
+    </tbody>
+</table>
+<p style="box-sizing: border-box; margin-bottom: 16px; margin-top: 0px;">
+    <span style="">5.请求成功</span>
+</p>
+<pre style="box-sizing: border-box; font-family: SFMono-Regular, Consolas, &quot;Liberation Mono&quot;, Menlo, Courier, monospace; font-size: 13.6px; margin-bottom: 0px !important; margin-top: 0px; overflow-wrap: normal; background-color: rgb(246, 248, 250); border-radius: 3px; line-height: 1.45; overflow: auto; padding: 16px;">{
+    state: 1,
+    msg: "success",
+    data: {
+        btcqc_ticker: {
+            state: 1,
+            msg: "success",
+            dspName: "BTC/USDT",
+            symbol: "btcqc",
+            timestamp: 1540632797891,
+            open: 0.58,
+            high: 0.5804,
+            low: 0.5797,
+            close: 0.58,
+            volume: 15278357.43,
+            bis1: [
+                0.58,
+                5000
+            ],
+            ask1: [
+                0.5802,
+                270
+            ],
+            upOrDown: -1,
+            pricePrecision: 4,
+            volumePrecision: 2,
+            order: 1,
+            areaId: 1,
+            canBuy: 1,
+            canSell: 1,
+            stopDesc: "",
+            quoteCurrencyName: "USDT",
+            baseCurrencyName: "BTC",
+            minBuyVolume: 0,
+            minBuyAmount: 0,
+            minSellVolume: 0,
+            fixedBuyPrice: 0,
+            canRecharge: 1
+        }，
+        ...
+    }}</pre>
+<p>
+    <br>
+</p></li><li style="display:none"><h1 class="flex-auto min-width-0 mb-2 mb-md-0 mr-0 mr-md-2 gh-header-title instapaper_title" style="box-sizing: border-box; font-size: 32px; margin: 0px 150px 0px 0px; font-weight: 400; flex: 1 1 auto !important; min-width: 0px !important; line-height: 1.125; overflow-wrap: break-word;">
+    获取交易对市场深度<br>
+</h1>
+<p style="box-sizing: border-box; margin-bottom: 16px; margin-top: 0px !important;">
+    1.请求URL：<a href="http://www.blackhorse.pro/m/depth/{symbol}" target="_self">http://www.blackhorse.pro/o/m/depth/{symbol}</a>
+</p>
+<p style="box-sizing: border-box; margin-bottom: 16px; margin-top: 0px;">
+    2.请求类型：GET
+</p>
+<p style="box-sizing: border-box; margin-bottom: 16px; margin-top: 0px;">
+    3.请求参数：
+</p>
+<table width="960" border="1">
+    <thead style="box-sizing: border-box;">
+        <tr style="box-sizing: border-box; border-top: 1px solid rgb(198, 203, 209);" class="firstRow">
+            <th align="center" style="box-sizing: border-box; padding: 6px 13px; border-color: rgb(223, 226, 229);">
+                参数
+            </th>
+            <th align="center" style="box-sizing: border-box; padding: 6px 13px; border-color: rgb(223, 226, 229);">
+                类型
+            </th>
+            <th align="center" style="box-sizing: border-box; padding: 6px 13px; border-color: rgb(223, 226, 229);">
+                描述
+            </th>
+            <th align="center" style="box-sizing: border-box; padding: 6px 13px; border-color: rgb(223, 226, 229);">
+                示例
+            </th>
+        </tr>
+    </thead>
+    <tbody style="box-sizing: border-box;">
+        <tr style="box-sizing: border-box; border-top: 1px solid rgb(198, 203, 209);">
+            <td align="center" style="box-sizing: border-box; padding: 6px 13px; border-color: rgb(223, 226, 229);">
+                symbol
+            </td>
+            <td align="center" style="box-sizing: border-box; padding: 6px 13px; border-color: rgb(223, 226, 229);">
+                String
+            </td>
+            <td align="center" style="box-sizing: border-box; padding: 6px 13px; border-color: rgb(223, 226, 229);">
+                交易对名称
+            </td>
+            <td align="center" style="box-sizing: border-box; padding: 6px 13px; border-color: rgb(223, 226, 229);">
+                ETHQC
+            </td>
+        </tr>
+    </tbody>
+</table>
+<p style="box-sizing: border-box; margin-bottom: 16px; margin-top: 0px;">
+    4.返回参数
+</p>
+<table width="960" border="1">
+    <thead style="box-sizing: border-box;">
+        <tr style="box-sizing: border-box; border-top: 1px solid rgb(198, 203, 209);" class="firstRow">
+            <th align="center" style="box-sizing: border-box; padding: 6px 13px; border-color: rgb(223, 226, 229);">
+                参数
+            </th>
+            <th align="center" style="box-sizing: border-box; padding: 6px 13px; border-color: rgb(223, 226, 229);">
+                类型
+            </th>
+            <th align="center" style="box-sizing: border-box; padding: 6px 13px; border-color: rgb(223, 226, 229);">
+                描述
+            </th>
+            <th align="center" style="box-sizing: border-box; padding: 6px 13px; border-color: rgb(223, 226, 229);">
+                示例
+            </th>
+        </tr>
+    </thead>
+    <tbody style="box-sizing: border-box;">
+        <tr style="box-sizing: border-box; border-top: 1px solid rgb(198, 203, 209);">
+            <td align="center" style="box-sizing: border-box; padding: 6px 13px; border-color: rgb(223, 226, 229);">
+                state
+            </td>
+            <td align="center" style="box-sizing: border-box; padding: 6px 13px; border-color: rgb(223, 226, 229);">
+                Integer
+            </td>
+            <td align="center" style="box-sizing: border-box; padding: 6px 13px; border-color: rgb(223, 226, 229);">
+                请求状态1成功，-1失败
+            </td>
+            <td align="center" style="box-sizing: border-box; padding: 6px 13px; border-color: rgb(223, 226, 229);">
+                1
+            </td>
+        </tr>
+        <tr style="box-sizing: border-box; background-color: rgb(246, 248, 250); border-top: 1px solid rgb(198, 203, 209);">
+            <td align="center" style="box-sizing: border-box; padding: 6px 13px; border-color: rgb(223, 226, 229);">
+                msg
+            </td>
+            <td align="center" style="box-sizing: border-box; padding: 6px 13px; border-color: rgb(223, 226, 229);">
+                String
+            </td>
+            <td align="center" style="box-sizing: border-box; padding: 6px 13px; border-color: rgb(223, 226, 229);">
+                请求状态说明
+            </td>
+            <td align="center" style="box-sizing: border-box; padding: 6px 13px; border-color: rgb(223, 226, 229);">
+                success
+            </td>
+        </tr>
+        <tr style="box-sizing: border-box; border-top: 1px solid rgb(198, 203, 209);">
+            <td align="center" style="box-sizing: border-box; padding: 6px 13px; border-color: rgb(223, 226, 229);">
+                symbol
+            </td>
+            <td align="center" style="box-sizing: border-box; padding: 6px 13px; border-color: rgb(223, 226, 229);">
+                String
+            </td>
+            <td align="center" style="box-sizing: border-box; padding: 6px 13px; border-color: rgb(223, 226, 229);">
+                交易对名称
+            </td>
+            <td align="center" style="box-sizing: border-box; padding: 6px 13px; border-color: rgb(223, 226, 229);">
+                ETHQC
+            </td>
+        </tr>
+        <tr style="box-sizing: border-box; background-color: rgb(246, 248, 250); border-top: 1px solid rgb(198, 203, 209);">
+            <td align="center" style="box-sizing: border-box; padding: 6px 13px; border-color: rgb(223, 226, 229);">
+                timestamp
+            </td>
+            <td align="center" style="box-sizing: border-box; padding: 6px 13px; border-color: rgb(223, 226, 229);">
+                long
+            </td>
+            <td align="center" style="box-sizing: border-box; padding: 6px 13px; border-color: rgb(223, 226, 229);">
+                时间戳精确到秒
+            </td>
+            <td align="center" style="box-sizing: border-box; padding: 6px 13px; border-color: rgb(223, 226, 229);">
+                1540619752
+            </td>
+        </tr>
+        <tr style="box-sizing: border-box; border-top: 1px solid rgb(198, 203, 209);">
+            <td align="center" style="box-sizing: border-box; padding: 6px 13px; border-color: rgb(223, 226, 229);">
+                bids
+            </td>
+            <td align="center" style="box-sizing: border-box; padding: 6px 13px; border-color: rgb(223, 226, 229);">
+                array
+            </td>
+            <td align="center" style="box-sizing: border-box; padding: 6px 13px; border-color: rgb(223, 226, 229);">
+                买方报价
+            </td>
+            <td align="center" style="box-sizing: border-box; padding: 6px 13px; border-color: rgb(223, 226, 229);">
+                略
+            </td>
+        </tr>
+        <tr style="box-sizing: border-box; background-color: rgb(246, 248, 250); border-top: 1px solid rgb(198, 203, 209);">
+            <td align="center" style="box-sizing: border-box; padding: 6px 13px; border-color: rgb(223, 226, 229);">
+                asks
+            </td>
+            <td align="center" style="box-sizing: border-box; padding: 6px 13px; border-color: rgb(223, 226, 229);">
+                array
+            </td>
+            <td align="center" style="box-sizing: border-box; padding: 6px 13px; border-color: rgb(223, 226, 229);">
+                卖方报价
+            </td>
+            <td align="center" style="box-sizing: border-box; padding: 6px 13px; border-color: rgb(223, 226, 229);">
+                略
+            </td>
+        </tr>
+        <tr style="box-sizing: border-box; border-top: 1px solid rgb(198, 203, 209);">
+            <td align="center" style="box-sizing: border-box; padding: 6px 13px; border-color: rgb(223, 226, 229);">
+                5.请求成功
+            </td>
+            <td align="center" style="box-sizing: border-box; padding: 6px 13px; border-color: rgb(223, 226, 229);"></td>
+            <td align="center" style="box-sizing: border-box; padding: 6px 13px; border-color: rgb(223, 226, 229);"></td>
+            <td align="center" style="box-sizing: border-box; padding: 6px 13px; border-color: rgb(223, 226, 229);"></td>
+        </tr>
+    </tbody>
+</table>
+<pre style="box-sizing: border-box; font-family: SFMono-Regular, Consolas, &quot;Liberation Mono&quot;, Menlo, Courier, monospace; font-size: 13.6px; margin-bottom: 0px !important; margin-top: 0px; overflow-wrap: normal; background-color: rgb(246, 248, 250); border-radius: 3px; line-height: 1.45; overflow: auto; padding: 16px;">{
+    state: 1,
+    msg: "success",
+    symbol: "ethqc",
+    timestamp: 1540633292277,
+    bids: [
+        [
+           1394,
+           0.41
+        ],
+        ...
+    ]，
+    asks: [
+        [
+           1394,
+           0.41
+        ],
+        ...
+    ]
+}</pre>
+<p>
+    <br>
+</p></li><li style="display:none"><h1 class="flex-auto min-width-0 mb-2 mb-md-0 mr-0 mr-md-2 gh-header-title instapaper_title" style="box-sizing: border-box; font-size: 32px; margin: 0px 150px 0px 0px; font-weight: 400; flex: 1 1 auto !important; min-width: 0px !important; line-height: 1.125; overflow-wrap: break-word;">
+    获取系统支持的交易对<br>
+</h1>
+<p style="box-sizing: border-box; margin-bottom: 16px; margin-top: 0px !important;">
+    1.请求URL：<a href="http://www.blackhorse.pro/m/symbol" target="_self">http://www.blackhorse.pro/m/symbol</a>
+</p>
+<p style="box-sizing: border-box; margin-bottom: 16px; margin-top: 0px;">
+    2.请求类型：GET
+</p>
+<p style="box-sizing: border-box; margin-bottom: 16px; margin-top: 0px;">
+    3.请求参数：无
+</p>
+<p style="box-sizing: border-box; margin-bottom: 16px; margin-top: 0px;">
+    4.返回参数
+</p>
+<table width="960" border="1">
+    <thead style="box-sizing: border-box;">
+        <tr style="box-sizing: border-box; border-top: 1px solid rgb(198, 203, 209);" class="firstRow">
+            <th align="center" style="box-sizing: border-box; padding: 6px 13px; border-color: rgb(223, 226, 229);">
+                参数
+            </th>
+            <th align="center" style="box-sizing: border-box; padding: 6px 13px; border-color: rgb(223, 226, 229);">
+                类型
+            </th>
+            <th align="center" style="box-sizing: border-box; padding: 6px 13px; border-color: rgb(223, 226, 229);">
+                描述
+            </th>
+            <th align="center" style="box-sizing: border-box; padding: 6px 13px; border-color: rgb(223, 226, 229);">
+                示例
+            </th>
+        </tr>
+    </thead>
+    <tbody style="box-sizing: border-box;">
+        <tr style="box-sizing: border-box; border-top: 1px solid rgb(198, 203, 209);">
+            <td align="center" style="box-sizing: border-box; padding: 6px 13px; border-color: rgb(223, 226, 229);">
+                state
+            </td>
+            <td align="center" style="box-sizing: border-box; padding: 6px 13px; border-color: rgb(223, 226, 229);">
+                Integer
+            </td>
+            <td align="center" style="box-sizing: border-box; padding: 6px 13px; border-color: rgb(223, 226, 229);">
+                请求状态1成功，-1失败
+            </td>
+            <td align="center" style="box-sizing: border-box; padding: 6px 13px; border-color: rgb(223, 226, 229);">
+                1
+            </td>
+        </tr>
+        <tr style="box-sizing: border-box; background-color: rgb(246, 248, 250); border-top: 1px solid rgb(198, 203, 209);">
+            <td align="center" style="box-sizing: border-box; padding: 6px 13px; border-color: rgb(223, 226, 229);">
+                msg
+            </td>
+            <td align="center" style="box-sizing: border-box; padding: 6px 13px; border-color: rgb(223, 226, 229);">
+                String
+            </td>
+            <td align="center" style="box-sizing: border-box; padding: 6px 13px; border-color: rgb(223, 226, 229);">
+                请求状态说明
+            </td>
+            <td align="center" style="box-sizing: border-box; padding: 6px 13px; border-color: rgb(223, 226, 229);">
+                success
+            </td>
+        </tr>
+        <tr style="box-sizing: border-box; border-top: 1px solid rgb(198, 203, 209);">
+            <td align="center" style="box-sizing: border-box; padding: 6px 13px; border-color: rgb(223, 226, 229);">
+                symbols
+            </td>
+            <td align="center" style="box-sizing: border-box; padding: 6px 13px; border-color: rgb(223, 226, 229);">
+                array
+            </td>
+            <td align="center" style="box-sizing: border-box; padding: 6px 13px; border-color: rgb(223, 226, 229);">
+                交易对描述
+            </td>
+            <td align="center" style="box-sizing: border-box; padding: 6px 13px; border-color: rgb(223, 226, 229);">
+                略
+            </td>
+        </tr>
+    </tbody>
+</table>
+<p style="box-sizing: border-box; margin-bottom: 16px; margin-top: 0px;">
+    5.请求成功
+</p>
+<pre style="box-sizing: border-box; font-family: SFMono-Regular, Consolas, &quot;Liberation Mono&quot;, Menlo, Courier, monospace; font-size: 13.6px; margin-bottom: 0px !important; margin-top: 0px; overflow-wrap: normal; background-color: rgb(246, 248, 250); border-radius: 3px; line-height: 1.45; overflow: auto; padding: 16px;">{
+    state: 1,
+    msg: "success",
+    symbols: [
+        {
+            symbol: "btcqc",
+            base_currency: "BTC",
+            quote_currency: "USDT",
+            price_precision: 4,
+            volume_precision: 2,
+            taker_fee: 0.002,
+            maker_fee: 0.002
+        },
+        ...
+    ]
+}</pre>
+<p>
+    <br>
+</p></li><li style="display:none"><h1 class="flex-auto min-width-0 mb-2 mb-md-0 mr-0 mr-md-2 gh-header-title instapaper_title" style="box-sizing: border-box; font-size: 32px; margin: 0px 150px 0px 0px; font-weight: 400; flex: 1 1 auto !important; min-width: 0px !important; line-height: 1.125; overflow-wrap: break-word;">
+    创建交易订单<br>
+</h1>
+<p style="box-sizing: border-box; margin-bottom: 16px; margin-top: 0px !important;">
+    1.请求URL：<a href="http://www.blackhorse.pro/o/api/order" style="box-sizing: border-box; background-color: transparent; color: rgb(3, 102, 214); text-decoration-line: none;">http://www.blackhorse.pro/o/api/order</a>
+</p>
+<p style="box-sizing: border-box; margin-bottom: 16px; margin-top: 0px;">
+    2.请求类型：POST
+</p>
+<p style="box-sizing: border-box; margin-bottom: 16px; margin-top: 0px;">
+    3.请求参数：
+</p>
+<table width="960" border="1">
+    <thead style="box-sizing: border-box;">
+        <tr style="box-sizing: border-box; border-top: 1px solid rgb(198, 203, 209);" class="firstRow">
+            <th align="center" style="box-sizing: border-box; padding: 6px 13px; border-color: rgb(223, 226, 229);">
+                参数
+            </th>
+            <th align="center" style="box-sizing: border-box; padding: 6px 13px; border-color: rgb(223, 226, 229);">
+                类型
+            </th>
+            <th align="center" style="box-sizing: border-box; padding: 6px 13px; border-color: rgb(223, 226, 229);">
+                是否参与签名
+            </th>
+            <th align="center" style="box-sizing: border-box; padding: 6px 13px; border-color: rgb(223, 226, 229);">
+                描述
+            </th>
+            <th align="center" style="box-sizing: border-box; padding: 6px 13px; border-color: rgb(223, 226, 229);">
+                示例
+            </th>
+        </tr>
+    </thead>
+    <tbody style="box-sizing: border-box;">
+        <tr style="box-sizing: border-box; border-top: 1px solid rgb(198, 203, 209);">
+            <td align="center" style="box-sizing: border-box; padding: 6px 13px; border-color: rgb(223, 226, 229);">
+                api_key
+            </td>
+            <td align="center" style="box-sizing: border-box; padding: 6px 13px; border-color: rgb(223, 226, 229);">
+                String
+            </td>
+            <td align="center" style="box-sizing: border-box; padding: 6px 13px; border-color: rgb(223, 226, 229);">
+                <span style="box-sizing: border-box; font-weight: 600;">是</span>
+            </td>
+            <td align="center" style="box-sizing: border-box; padding: 6px 13px; border-color: rgb(223, 226, 229);">
+                用户apikey
+            </td>
+            <td align="center" style="box-sizing: border-box; padding: 6px 13px; border-color: rgb(223, 226, 229);">
+                5b092b11-001c-4e50-9d8e-00f9db752241
+            </td>
+        </tr>
+        <tr style="box-sizing: border-box; background-color: rgb(246, 248, 250); border-top: 1px solid rgb(198, 203, 209);">
+            <td align="center" style="box-sizing: border-box; padding: 6px 13px; border-color: rgb(223, 226, 229);">
+                o_no
+            </td>
+            <td align="center" style="box-sizing: border-box; padding: 6px 13px; border-color: rgb(223, 226, 229);">
+                String
+            </td>
+            <td align="center" style="box-sizing: border-box; padding: 6px 13px; border-color: rgb(223, 226, 229);">
+                <span style="box-sizing: border-box; font-weight: 600;">是</span>
+            </td>
+            <td align="center" style="box-sizing: border-box; padding: 6px 13px; border-color: rgb(223, 226, 229);">
+                交易订单号，32位随机字符串
+            </td>
+            <td align="center" style="box-sizing: border-box; padding: 6px 13px; border-color: rgb(223, 226, 229);">
+                1540635044555-0.7886791948144788
+            </td>
+        </tr>
+        <tr style="box-sizing: border-box; border-top: 1px solid rgb(198, 203, 209);">
+            <td align="center" style="box-sizing: border-box; padding: 6px 13px; border-color: rgb(223, 226, 229);">
+                o_price_type
+            </td>
+            <td align="center" style="box-sizing: border-box; padding: 6px 13px; border-color: rgb(223, 226, 229);">
+                String
+            </td>
+            <td align="center" style="box-sizing: border-box; padding: 6px 13px; border-color: rgb(223, 226, 229);">
+                <span style="box-sizing: border-box; font-weight: 600;">是</span>
+            </td>
+            <td align="center" style="box-sizing: border-box; padding: 6px 13px; border-color: rgb(223, 226, 229);">
+                价格类型：limit、market，分别代表限价单、市价单
+            </td>
+            <td align="center" style="box-sizing: border-box; padding: 6px 13px; border-color: rgb(223, 226, 229);">
+                limit
+            </td>
+        </tr>
+        <tr style="box-sizing: border-box; background-color: rgb(246, 248, 250); border-top: 1px solid rgb(198, 203, 209);">
+            <td align="center" style="box-sizing: border-box; padding: 6px 13px; border-color: rgb(223, 226, 229);">
+                o_type
+            </td>
+            <td align="center" style="box-sizing: border-box; padding: 6px 13px; border-color: rgb(223, 226, 229);">
+                String
+            </td>
+            <td align="center" style="box-sizing: border-box; padding: 6px 13px; border-color: rgb(223, 226, 229);">
+                <span style="box-sizing: border-box; font-weight: 600;">是</span>
+            </td>
+            <td align="center" style="box-sizing: border-box; padding: 6px 13px; border-color: rgb(223, 226, 229);">
+                订单类型：sell，buy，分别代表卖、买
+            </td>
+            <td align="center" style="box-sizing: border-box; padding: 6px 13px; border-color: rgb(223, 226, 229);">
+                sell
+            </td>
+        </tr>
+        <tr style="box-sizing: border-box; border-top: 1px solid rgb(198, 203, 209);">
+            <td align="center" style="box-sizing: border-box; padding: 6px 13px; border-color: rgb(223, 226, 229);">
+                price
+            </td>
+            <td align="center" style="box-sizing: border-box; padding: 6px 13px; border-color: rgb(223, 226, 229);">
+                BigDecimal
+            </td>
+            <td align="center" style="box-sizing: border-box; padding: 6px 13px; border-color: rgb(223, 226, 229);">
+                <span style="box-sizing: border-box; font-weight: 600;">是</span>
+            </td>
+            <td align="center" style="box-sizing: border-box; padding: 6px 13px; border-color: rgb(223, 226, 229);">
+                价格
+            </td>
+            <td align="center" style="box-sizing: border-box; padding: 6px 13px; border-color: rgb(223, 226, 229);">
+                136.8
+            </td>
+        </tr>
+        <tr style="box-sizing: border-box; background-color: rgb(246, 248, 250); border-top: 1px solid rgb(198, 203, 209);">
+            <td align="center" style="box-sizing: border-box; padding: 6px 13px; border-color: rgb(223, 226, 229);">
+                volume
+            </td>
+            <td align="center" style="box-sizing: border-box; padding: 6px 13px; border-color: rgb(223, 226, 229);">
+                BigDecimal
+            </td>
+            <td align="center" style="box-sizing: border-box; padding: 6px 13px; border-color: rgb(223, 226, 229);">
+                <span style="box-sizing: border-box; font-weight: 600;">是</span>
+            </td>
+            <td align="center" style="box-sizing: border-box; padding: 6px 13px; border-color: rgb(223, 226, 229);">
+                数量
+            </td>
+            <td align="center" style="box-sizing: border-box; padding: 6px 13px; border-color: rgb(223, 226, 229);">
+                0.1
+            </td>
+        </tr>
+        <tr style="box-sizing: border-box; border-top: 1px solid rgb(198, 203, 209);">
+            <td align="center" style="box-sizing: border-box; padding: 6px 13px; border-color: rgb(223, 226, 229);">
+                symbol
+            </td>
+            <td align="center" style="box-sizing: border-box; padding: 6px 13px; border-color: rgb(223, 226, 229);">
+                String
+            </td>
+            <td align="center" style="box-sizing: border-box; padding: 6px 13px; border-color: rgb(223, 226, 229);">
+                <span style="box-sizing: border-box; font-weight: 600;">是</span>
+            </td>
+            <td align="center" style="box-sizing: border-box; padding: 6px 13px; border-color: rgb(223, 226, 229);">
+                交易对名称
+            </td>
+            <td align="center" style="box-sizing: border-box; padding: 6px 13px; border-color: rgb(223, 226, 229);">
+                ETHQC
+            </td>
+        </tr>
+        <tr style="box-sizing: border-box; background-color: rgb(246, 248, 250); border-top: 1px solid rgb(198, 203, 209);">
+            <td align="center" style="box-sizing: border-box; padding: 6px 13px; border-color: rgb(223, 226, 229);">
+                timestamp
+            </td>
+            <td align="center" style="box-sizing: border-box; padding: 6px 13px; border-color: rgb(223, 226, 229);">
+                long
+            </td>
+            <td align="center" style="box-sizing: border-box; padding: 6px 13px; border-color: rgb(223, 226, 229);">
+                <span style="box-sizing: border-box; font-weight: 600;">是</span>
+            </td>
+            <td align="center" style="box-sizing: border-box; padding: 6px 13px; border-color: rgb(223, 226, 229);">
+                时间戳精确到秒
+            </td>
+            <td align="center" style="box-sizing: border-box; padding: 6px 13px; border-color: rgb(223, 226, 229);">
+                1540619752
+            </td>
+        </tr>
+        <tr style="box-sizing: border-box; border-top: 1px solid rgb(198, 203, 209);">
+            <td align="center" style="box-sizing: border-box; padding: 6px 13px; border-color: rgb(223, 226, 229);">
+                sign_type
+            </td>
+            <td align="center" style="box-sizing: border-box; padding: 6px 13px; border-color: rgb(223, 226, 229);">
+                String
+            </td>
+            <td align="center" style="box-sizing: border-box; padding: 6px 13px; border-color: rgb(223, 226, 229);">
+                <span style="box-sizing: border-box; font-weight: 600;">是</span>
+            </td>
+            <td align="center" style="box-sizing: border-box; padding: 6px 13px; border-color: rgb(223, 226, 229);">
+                签名类型
+            </td>
+            <td align="center" style="box-sizing: border-box; padding: 6px 13px; border-color: rgb(223, 226, 229);">
+                MD5
+            </td>
+        </tr>
+        <tr style="box-sizing: border-box; background-color: rgb(246, 248, 250); border-top: 1px solid rgb(198, 203, 209);">
+            <td align="center" style="box-sizing: border-box; padding: 6px 13px; border-color: rgb(223, 226, 229);">
+                sign
+            </td>
+            <td align="center" style="box-sizing: border-box; padding: 6px 13px; border-color: rgb(223, 226, 229);">
+                String
+            </td>
+            <td align="center" style="box-sizing: border-box; padding: 6px 13px; border-color: rgb(223, 226, 229);">
+                否
+            </td>
+            <td align="center" style="box-sizing: border-box; padding: 6px 13px; border-color: rgb(223, 226, 229);">
+                具体查看<a href="sign.html" style="box-sizing: border-box; background-color: transparent; color: rgb(3, 102, 214); text-decoration-line: none;">签名认证</a>
+            </td>
+            <td align="center" style="box-sizing: border-box; padding: 6px 13px; border-color: rgb(223, 226, 229);">
+                ade9e763f24276512c033f7cef76
+            </td>
+        </tr>
+    </tbody>
+</table>
+<p style="box-sizing: border-box; margin-bottom: 16px; margin-top: 0px;">
+    4.返回参数
+</p>
+<table width="960" border="1">
+    <thead style="box-sizing: border-box;">
+        <tr style="box-sizing: border-box; border-top: 1px solid rgb(198, 203, 209);" class="firstRow">
+            <th align="center" style="box-sizing: border-box; padding: 6px 13px; border-color: rgb(223, 226, 229);">
+                参数
+            </th>
+            <th align="center" style="box-sizing: border-box; padding: 6px 13px; border-color: rgb(223, 226, 229);">
+                类型
+            </th>
+            <th align="center" style="box-sizing: border-box; padding: 6px 13px; border-color: rgb(223, 226, 229);">
+                描述
+            </th>
+            <th align="center" style="box-sizing: border-box; padding: 6px 13px; border-color: rgb(223, 226, 229);">
+                示例
+            </th>
+        </tr>
+    </thead>
+    <tbody style="box-sizing: border-box;">
+        <tr style="box-sizing: border-box; border-top: 1px solid rgb(198, 203, 209);">
+            <td align="center" style="box-sizing: border-box; padding: 6px 13px; border-color: rgb(223, 226, 229);">
+                state
+            </td>
+            <td align="center" style="box-sizing: border-box; padding: 6px 13px; border-color: rgb(223, 226, 229);">
+                Integer
+            </td>
+            <td align="center" style="box-sizing: border-box; padding: 6px 13px; border-color: rgb(223, 226, 229);">
+                请求状态1成功，-1失败
+            </td>
+            <td align="center" style="box-sizing: border-box; padding: 6px 13px; border-color: rgb(223, 226, 229);">
+                1
+            </td>
+        </tr>
+        <tr style="box-sizing: border-box; background-color: rgb(246, 248, 250); border-top: 1px solid rgb(198, 203, 209);">
+            <td align="center" style="box-sizing: border-box; padding: 6px 13px; border-color: rgb(223, 226, 229);">
+                msg
+            </td>
+            <td align="center" style="box-sizing: border-box; padding: 6px 13px; border-color: rgb(223, 226, 229);">
+                String
+            </td>
+            <td align="center" style="box-sizing: border-box; padding: 6px 13px; border-color: rgb(223, 226, 229);">
+                请求状态说明
+            </td>
+            <td align="center" style="box-sizing: border-box; padding: 6px 13px; border-color: rgb(223, 226, 229);">
+                success
+            </td>
+        </tr>
+        <tr style="box-sizing: border-box; border-top: 1px solid rgb(198, 203, 209);">
+            <td align="center" style="box-sizing: border-box; padding: 6px 13px; border-color: rgb(223, 226, 229);">
+                data
+            </td>
+            <td align="center" style="box-sizing: border-box; padding: 6px 13px; border-color: rgb(223, 226, 229);">
+                long
+            </td>
+            <td align="center" style="box-sizing: border-box; padding: 6px 13px; border-color: rgb(223, 226, 229);">
+                订单id
+            </td>
+            <td align="center" style="box-sizing: border-box; padding: 6px 13px; border-color: rgb(223, 226, 229);">
+                2344221
+            </td>
+        </tr>
+    </tbody>
+</table>
+<p style="box-sizing: border-box; margin-bottom: 16px; margin-top: 0px;">
+    5.请求成功
+</p>
+<pre style="box-sizing: border-box; font-family: SFMono-Regular, Consolas, &quot;Liberation Mono&quot;, Menlo, Courier, monospace; font-size: 13.6px; margin-bottom: 16px; margin-top: 0px; overflow-wrap: normal; background-color: rgb(246, 248, 250); border-radius: 3px; line-height: 1.45; overflow: auto; padding: 16px;">{
+ state: 1,
+ msg: "success",
+ data: 2344221
+}</pre>
+<p style="box-sizing: border-box; margin-bottom: 16px; margin-top: 0px;">
+    6.请求失败
+</p>
+<pre style="box-sizing: border-box; font-family: SFMono-Regular, Consolas, &quot;Liberation Mono&quot;, Menlo, Courier, monospace; font-size: 13.6px; margin-bottom: 0px !important; margin-top: 0px; overflow-wrap: normal; background-color: rgb(246, 248, 250); border-radius: 3px; line-height: 1.45; overflow: auto; padding: 16px;">{
+  "state":-1,
+  "msg":"NO_SUFFICIENT_FUNDS"
+}</pre>
+<p>
+    <br>
+</p></li><li style="display:none"><h1 class="flex-auto min-width-0 mb-2 mb-md-0 mr-0 mr-md-2 gh-header-title instapaper_title" style="box-sizing: border-box; font-size: 32px; margin: 0px 150px 0px 0px; font-weight: 400; flex: 1 1 auto !important; min-width: 0px !important; line-height: 1.125; overflow-wrap: break-word;">
+    取消交易订单<br>
+</h1>
+<p style="box-sizing: border-box; margin-bottom: 16px; margin-top: 0px !important;">
+    1.请求URL：<a href="http://www.blackhorse.pro/o/api/order" target="_self">http://www.blackhorse.pro/o/api/order</a>
+</p>
+<p style="box-sizing: border-box; margin-bottom: 16px; margin-top: 0px;">
+    2.请求类型：DELETE
+</p>
+<p style="box-sizing: border-box; margin-bottom: 16px; margin-top: 0px;">
+    3.请求参数：
+</p>
+<table width="960" border="1">
+    <thead style="box-sizing: border-box;">
+        <tr style="box-sizing: border-box; border-top: 1px solid rgb(198, 203, 209);" class="firstRow">
+            <th align="center" style="box-sizing: border-box; padding: 6px 13px; border-color: rgb(223, 226, 229);">
+                参数
+            </th>
+            <th align="center" style="box-sizing: border-box; padding: 6px 13px; border-color: rgb(223, 226, 229);">
+                类型
+            </th>
+            <th align="center" style="box-sizing: border-box; padding: 6px 13px; border-color: rgb(223, 226, 229);">
+                是否参与签名
+            </th>
+            <th align="center" style="box-sizing: border-box; padding: 6px 13px; border-color: rgb(223, 226, 229);">
+                描述
+            </th>
+            <th align="center" style="box-sizing: border-box; padding: 6px 13px; border-color: rgb(223, 226, 229);">
+                示例
+            </th>
+        </tr>
+    </thead>
+    <tbody style="box-sizing: border-box;">
+        <tr style="box-sizing: border-box; border-top: 1px solid rgb(198, 203, 209);">
+            <td align="center" style="box-sizing: border-box; padding: 6px 13px; border-color: rgb(223, 226, 229);">
+                api_key
+            </td>
+            <td align="center" style="box-sizing: border-box; padding: 6px 13px; border-color: rgb(223, 226, 229);">
+                String
+            </td>
+            <td align="center" style="box-sizing: border-box; padding: 6px 13px; border-color: rgb(223, 226, 229);">
+                <span style="box-sizing: border-box; font-weight: 600;">是</span>
+            </td>
+            <td align="center" style="box-sizing: border-box; padding: 6px 13px; border-color: rgb(223, 226, 229);">
+                用户apikey
+            </td>
+            <td align="center" style="box-sizing: border-box; padding: 6px 13px; border-color: rgb(223, 226, 229);">
+                5b092b11-001c-4e50-9d8e-00f9db752241
+            </td>
+        </tr>
+        <tr style="box-sizing: border-box; background-color: rgb(246, 248, 250); border-top: 1px solid rgb(198, 203, 209);">
+            <td align="center" style="box-sizing: border-box; padding: 6px 13px; border-color: rgb(223, 226, 229);">
+                o_no
+            </td>
+            <td align="center" style="box-sizing: border-box; padding: 6px 13px; border-color: rgb(223, 226, 229);">
+                String
+            </td>
+            <td align="center" style="box-sizing: border-box; padding: 6px 13px; border-color: rgb(223, 226, 229);">
+                <span style="box-sizing: border-box; font-weight: 600;">是</span>
+            </td>
+            <td align="center" style="box-sizing: border-box; padding: 6px 13px; border-color: rgb(223, 226, 229);">
+                交易订单号，32位随机字符串
+            </td>
+            <td align="center" style="box-sizing: border-box; padding: 6px 13px; border-color: rgb(223, 226, 229);">
+                1540635044555-0.7886791948144788
+            </td>
+        </tr>
+        <tr style="box-sizing: border-box; border-top: 1px solid rgb(198, 203, 209);">
+            <td align="center" style="box-sizing: border-box; padding: 6px 13px; border-color: rgb(223, 226, 229);">
+                id
+            </td>
+            <td align="center" style="box-sizing: border-box; padding: 6px 13px; border-color: rgb(223, 226, 229);">
+                Integer
+            </td>
+            <td align="center" style="box-sizing: border-box; padding: 6px 13px; border-color: rgb(223, 226, 229);">
+                <span style="box-sizing: border-box; font-weight: 600;">是</span>
+            </td>
+            <td align="center" style="box-sizing: border-box; padding: 6px 13px; border-color: rgb(223, 226, 229);">
+                订单id
+            </td>
+            <td align="center" style="box-sizing: border-box; padding: 6px 13px; border-color: rgb(223, 226, 229);">
+                234452
+            </td>
+        </tr>
+        <tr style="box-sizing: border-box; background-color: rgb(246, 248, 250); border-top: 1px solid rgb(198, 203, 209);">
+            <td align="center" style="box-sizing: border-box; padding: 6px 13px; border-color: rgb(223, 226, 229);">
+                symbol
+            </td>
+            <td align="center" style="box-sizing: border-box; padding: 6px 13px; border-color: rgb(223, 226, 229);">
+                String
+            </td>
+            <td align="center" style="box-sizing: border-box; padding: 6px 13px; border-color: rgb(223, 226, 229);">
+                <span style="box-sizing: border-box; font-weight: 600;">是</span>
+            </td>
+            <td align="center" style="box-sizing: border-box; padding: 6px 13px; border-color: rgb(223, 226, 229);">
+                交易对名称
+            </td>
+            <td align="center" style="box-sizing: border-box; padding: 6px 13px; border-color: rgb(223, 226, 229);">
+                ETHQC
+            </td>
+        </tr>
+        <tr style="box-sizing: border-box; border-top: 1px solid rgb(198, 203, 209);">
+            <td align="center" style="box-sizing: border-box; padding: 6px 13px; border-color: rgb(223, 226, 229);">
+                timestamp
+            </td>
+            <td align="center" style="box-sizing: border-box; padding: 6px 13px; border-color: rgb(223, 226, 229);">
+                long
+            </td>
+            <td align="center" style="box-sizing: border-box; padding: 6px 13px; border-color: rgb(223, 226, 229);">
+                <span style="box-sizing: border-box; font-weight: 600;">是</span>
+            </td>
+            <td align="center" style="box-sizing: border-box; padding: 6px 13px; border-color: rgb(223, 226, 229);">
+                时间戳精确到秒
+            </td>
+            <td align="center" style="box-sizing: border-box; padding: 6px 13px; border-color: rgb(223, 226, 229);">
+                1540619752
+            </td>
+        </tr>
+        <tr style="box-sizing: border-box; background-color: rgb(246, 248, 250); border-top: 1px solid rgb(198, 203, 209);">
+            <td align="center" style="box-sizing: border-box; padding: 6px 13px; border-color: rgb(223, 226, 229);">
+                sign_type
+            </td>
+            <td align="center" style="box-sizing: border-box; padding: 6px 13px; border-color: rgb(223, 226, 229);">
+                String
+            </td>
+            <td align="center" style="box-sizing: border-box; padding: 6px 13px; border-color: rgb(223, 226, 229);">
+                <span style="box-sizing: border-box; font-weight: 600;">是</span>
+            </td>
+            <td align="center" style="box-sizing: border-box; padding: 6px 13px; border-color: rgb(223, 226, 229);">
+                签名类型
+            </td>
+            <td align="center" style="box-sizing: border-box; padding: 6px 13px; border-color: rgb(223, 226, 229);">
+                MD5
+            </td>
+        </tr>
+        <tr style="box-sizing: border-box; border-top: 1px solid rgb(198, 203, 209);">
+            <td align="center" style="box-sizing: border-box; padding: 6px 13px; border-color: rgb(223, 226, 229);">
+                sign
+            </td>
+            <td align="center" style="box-sizing: border-box; padding: 6px 13px; border-color: rgb(223, 226, 229);">
+                String
+            </td>
+            <td align="center" style="box-sizing: border-box; padding: 6px 13px; border-color: rgb(223, 226, 229);">
+                否
+            </td>
+            <td align="center" style="box-sizing: border-box; padding: 6px 13px; border-color: rgb(223, 226, 229);">
+                具体查看<a href="sign.html" style="box-sizing: border-box; background-color: transparent; color: rgb(3, 102, 214); text-decoration-line: none;">签名认证</a>
+            </td>
+            <td align="center" style="box-sizing: border-box; padding: 6px 13px; border-color: rgb(223, 226, 229);">
+                ade9e763f24276512c033f7cef76
+            </td>
+        </tr>
+    </tbody>
+</table>
+<p style="box-sizing: border-box; margin-bottom: 16px; margin-top: 0px;">
+    4.返回参数
+</p>
+<table width="960" border="1">
+    <thead style="box-sizing: border-box;">
+        <tr style="box-sizing: border-box; border-top: 1px solid rgb(198, 203, 209);" class="firstRow">
+            <th align="center" style="box-sizing: border-box; padding: 6px 13px; border-color: rgb(223, 226, 229);">
+                参数
+            </th>
+            <th align="center" style="box-sizing: border-box; padding: 6px 13px; border-color: rgb(223, 226, 229);">
+                类型
+            </th>
+            <th align="center" style="box-sizing: border-box; padding: 6px 13px; border-color: rgb(223, 226, 229);">
+                描述
+            </th>
+            <th align="center" style="box-sizing: border-box; padding: 6px 13px; border-color: rgb(223, 226, 229);">
+                示例
+            </th>
+        </tr>
+    </thead>
+    <tbody style="box-sizing: border-box;">
+        <tr style="box-sizing: border-box; border-top: 1px solid rgb(198, 203, 209);">
+            <td align="center" style="box-sizing: border-box; padding: 6px 13px; border-color: rgb(223, 226, 229);">
+                state
+            </td>
+            <td align="center" style="box-sizing: border-box; padding: 6px 13px; border-color: rgb(223, 226, 229);">
+                Integer
+            </td>
+            <td align="center" style="box-sizing: border-box; padding: 6px 13px; border-color: rgb(223, 226, 229);">
+                请求状态1成功，-1失败
+            </td>
+            <td align="center" style="box-sizing: border-box; padding: 6px 13px; border-color: rgb(223, 226, 229);">
+                1
+            </td>
+        </tr>
+        <tr style="box-sizing: border-box; background-color: rgb(246, 248, 250); border-top: 1px solid rgb(198, 203, 209);">
+            <td align="center" style="box-sizing: border-box; padding: 6px 13px; border-color: rgb(223, 226, 229);">
+                msg
+            </td>
+            <td align="center" style="box-sizing: border-box; padding: 6px 13px; border-color: rgb(223, 226, 229);">
+                String
+            </td>
+            <td align="center" style="box-sizing: border-box; padding: 6px 13px; border-color: rgb(223, 226, 229);">
+                请求状态说明
+            </td>
+            <td align="center" style="box-sizing: border-box; padding: 6px 13px; border-color: rgb(223, 226, 229);">
+                success
+            </td>
+        </tr>
+    </tbody>
+</table>
+<p style="box-sizing: border-box; margin-bottom: 16px; margin-top: 0px;">
+    5.请求成功
+</p>
+<pre style="box-sizing: border-box; font-family: SFMono-Regular, Consolas, &quot;Liberation Mono&quot;, Menlo, Courier, monospace; font-size: 13.6px; margin-bottom: 16px; margin-top: 0px; overflow-wrap: normal; background-color: rgb(246, 248, 250); border-radius: 3px; line-height: 1.45; overflow: auto; padding: 16px;">{
+ state: 1,
+ msg: "success"
+}</pre>
+<p style="box-sizing: border-box; margin-bottom: 16px; margin-top: 0px;">
+    6.请求失败
+</p>
+<pre style="box-sizing: border-box; font-family: SFMono-Regular, Consolas, &quot;Liberation Mono&quot;, Menlo, Courier, monospace; font-size: 13.6px; margin-bottom: 0px !important; margin-top: 0px; overflow-wrap: normal; background-color: rgb(246, 248, 250); border-radius: 3px; line-height: 1.45; overflow: auto; padding: 16px;">{
+ state: -1,
+ msg: "LANG_ORDER_IS_DONE_OR_CANCELED"
+}</pre>
+<p>
+    <br>
+</p></li><li style="display:none"><h1 class="flex-auto min-width-0 mb-2 mb-md-0 mr-0 mr-md-2 gh-header-title instapaper_title" style="box-sizing: border-box; font-size: 32px; margin: 0px 150px 0px 0px; font-weight: 400; flex: 1 1 auto !important; min-width: 0px !important; line-height: 1.125; overflow-wrap: break-word;">
+    获取K线数据<br>
+</h1>
+<p style="box-sizing: border-box; margin-bottom: 16px; margin-top: 0px !important;">
+    1.请求URL：<a href="http://www.blackhorse.pro/m/kline/{symbol}/{type}/{size}" target="_self">http://www.blackhorse.pro/m/kline/{symbol}/{type}/{size}</a>
+</p>
+<p style="box-sizing: border-box; margin-bottom: 16px; margin-top: 0px;">
+    2.请求类型：GET
+</p>
+<p style="box-sizing: border-box; margin-bottom: 16px; margin-top: 0px;">
+    3.请求参数：
+</p>
+<table width="960" border="1">
+    <thead style="box-sizing: border-box;">
+        <tr style="box-sizing: border-box; border-top: 1px solid rgb(198, 203, 209);" class="firstRow">
+            <th align="center" style="box-sizing: border-box; padding: 6px 13px; border-color: rgb(223, 226, 229);">
+                参数
+            </th>
+            <th align="center" style="box-sizing: border-box; padding: 6px 13px; border-color: rgb(223, 226, 229);">
+                类型
+            </th>
+            <th align="center" style="box-sizing: border-box; padding: 6px 13px; border-color: rgb(223, 226, 229);">
+                描述
+            </th>
+            <th align="center" style="box-sizing: border-box; padding: 6px 13px; border-color: rgb(223, 226, 229);">
+                示例
+            </th>
+        </tr>
+    </thead>
+    <tbody style="box-sizing: border-box;">
+        <tr style="box-sizing: border-box; border-top: 1px solid rgb(198, 203, 209);">
+            <td align="center" style="box-sizing: border-box; padding: 6px 13px; border-color: rgb(223, 226, 229);">
+                symbol
+            </td>
+            <td align="center" style="box-sizing: border-box; padding: 6px 13px; border-color: rgb(223, 226, 229);">
+                String
+            </td>
+            <td align="center" style="box-sizing: border-box; padding: 6px 13px; border-color: rgb(223, 226, 229);">
+                交易对名称，ETHQC、BTCQC
+            </td>
+            <td align="center" style="box-sizing: border-box; padding: 6px 13px; border-color: rgb(223, 226, 229);">
+                ETHQC
+            </td>
+        </tr>
+        <tr style="box-sizing: border-box; background-color: rgb(246, 248, 250); border-top: 1px solid rgb(198, 203, 209);">
+            <td align="center" style="box-sizing: border-box; padding: 6px 13px; border-color: rgb(223, 226, 229);">
+                type
+            </td>
+            <td align="center" style="box-sizing: border-box; padding: 6px 13px; border-color: rgb(223, 226, 229);">
+                String
+            </td>
+            <td align="center" style="box-sizing: border-box; padding: 6px 13px; border-color: rgb(223, 226, 229);">
+                K线周期类型，1min、5min、15min、30min、60min、1day、1mon、1week
+            </td>
+            <td align="center" style="box-sizing: border-box; padding: 6px 13px; border-color: rgb(223, 226, 229);">
+                1min
+            </td>
+        </tr>
+        <tr style="box-sizing: border-box; border-top: 1px solid rgb(198, 203, 209);">
+            <td align="center" style="box-sizing: border-box; padding: 6px 13px; border-color: rgb(223, 226, 229);">
+                size
+            </td>
+            <td align="center" style="box-sizing: border-box; padding: 6px 13px; border-color: rgb(223, 226, 229);">
+                Integer
+            </td>
+            <td align="center" style="box-sizing: border-box; padding: 6px 13px; border-color: rgb(223, 226, 229);">
+                获取数据数量，1、10、100、100
+            </td>
+            <td align="center" style="box-sizing: border-box; padding: 6px 13px; border-color: rgb(223, 226, 229);">
+                1
+            </td>
+        </tr>
+    </tbody>
+</table>
+<p style="box-sizing: border-box; margin-bottom: 16px; margin-top: 0px;">
+    4.返回参数
+</p>
+<table width="960" border="1">
+    <thead style="box-sizing: border-box;">
+        <tr style="box-sizing: border-box; border-top: 1px solid rgb(198, 203, 209);" class="firstRow">
+            <th align="center" style="box-sizing: border-box; padding: 6px 13px; border-color: rgb(223, 226, 229);">
+                参数
+            </th>
+            <th align="center" style="box-sizing: border-box; padding: 6px 13px; border-color: rgb(223, 226, 229);">
+                类型
+            </th>
+            <th align="center" style="box-sizing: border-box; padding: 6px 13px; border-color: rgb(223, 226, 229);">
+                描述
+            </th>
+            <th align="center" style="box-sizing: border-box; padding: 6px 13px; border-color: rgb(223, 226, 229);">
+                示例
+            </th>
+        </tr>
+    </thead>
+    <tbody style="box-sizing: border-box;">
+        <tr style="box-sizing: border-box; border-top: 1px solid rgb(198, 203, 209);">
+            <td align="center" style="box-sizing: border-box; padding: 6px 13px; border-color: rgb(223, 226, 229);">
+                success
+            </td>
+            <td align="center" style="box-sizing: border-box; padding: 6px 13px; border-color: rgb(223, 226, 229);">
+                boolean
+            </td>
+            <td align="center" style="box-sizing: border-box; padding: 6px 13px; border-color: rgb(223, 226, 229);">
+                请求状态true成功，false失败
+            </td>
+            <td align="center" style="box-sizing: border-box; padding: 6px 13px; border-color: rgb(223, 226, 229);">
+                true
+            </td>
+        </tr>
+        <tr style="box-sizing: border-box; background-color: rgb(246, 248, 250); border-top: 1px solid rgb(198, 203, 209);">
+            <td align="center" style="box-sizing: border-box; padding: 6px 13px; border-color: rgb(223, 226, 229);">
+                data
+            </td>
+            <td align="center" style="box-sizing: border-box; padding: 6px 13px; border-color: rgb(223, 226, 229);">
+                array
+            </td>
+            <td align="center" style="box-sizing: border-box; padding: 6px 13px; border-color: rgb(223, 226, 229);">
+                k线数据
+            </td>
+            <td align="center" style="box-sizing: border-box; padding: 6px 13px; border-color: rgb(223, 226, 229);">
+                略
+            </td>
+        </tr>
+    </tbody>
+</table>
+<p style="box-sizing: border-box; margin-bottom: 16px; margin-top: 0px;">
+    5.请求成功
+</p>
+<pre style="box-sizing: border-box; font-family: SFMono-Regular, Consolas, &quot;Liberation Mono&quot;, Menlo, Courier, monospace; font-size: 13.6px; margin-bottom: 16px; margin-top: 0px; overflow-wrap: normal; background-color: rgb(246, 248, 250); border-radius: 3px; line-height: 1.45; overflow: auto; padding: 16px;">{
+  "success": true,
+  "data": {
+    "lines": [
+      [
+        1540863480000,
+        800,
+        800,
+        800,
+        800,
+        0
+      ]
+    ]
+  }
+}</pre>
+<p style="box-sizing: border-box; margin-bottom: 16px; margin-top: 0px;">
+    6.请求失败
+</p>
+<pre style="box-sizing: border-box; font-family: SFMono-Regular, Consolas, &quot;Liberation Mono&quot;, Menlo, Courier, monospace; font-size: 13.6px; margin-bottom: 0px !important; margin-top: 0px; overflow-wrap: normal; background-color: rgb(246, 248, 250); border-radius: 3px; line-height: 1.45; overflow: auto; padding: 16px;">{
+  state: -1,
+  msg: "参数类型不正确"
+}</pre>
+<p>
+    <br>
+</p></li><li style="display:none"><h1 class="flex-auto min-width-0 mb-2 mb-md-0 mr-0 mr-md-2 gh-header-title instapaper_title" style="box-sizing: border-box; font-size: 32px; margin: 0px 150px 0px 0px; font-weight: 400; flex: 1 1 auto !important; min-width: 0px !important; line-height: 1.125; overflow-wrap: break-word;">
+    获取公告列表<br>
+</h1>
+<p style="box-sizing: border-box; margin-bottom: 16px; margin-top: 0px !important;">
+    1.请求URL：<a href="http://www.blackhorse.pro/n/news/304/{page}/{size}" target="_self">http://www.blackhorse.pro/n/news/304/{page}/{size}</a>
+</p>
+<p style="box-sizing: border-box; margin-bottom: 16px; margin-top: 0px;">
+    2.请求类型：GET
+</p>
+<p style="box-sizing: border-box; margin-bottom: 16px; margin-top: 0px;">
+    3.请求参数：
+</p>
+<table width="960" border="1">
+    <thead style="box-sizing: border-box;">
+        <tr style="box-sizing: border-box; border-top: 1px solid rgb(198, 203, 209);" class="firstRow">
+            <th align="center" style="box-sizing: border-box; padding: 6px 13px; border-color: rgb(223, 226, 229);">
+                参数
+            </th>
+            <th align="center" style="box-sizing: border-box; padding: 6px 13px; border-color: rgb(223, 226, 229);">
+                类型
+            </th>
+            <th align="center" style="box-sizing: border-box; padding: 6px 13px; border-color: rgb(223, 226, 229);">
+                是否参与签名
+            </th>
+            <th align="center" style="box-sizing: border-box; padding: 6px 13px; border-color: rgb(223, 226, 229);">
+                描述
+            </th>
+            <th align="center" style="box-sizing: border-box; padding: 6px 13px; border-color: rgb(223, 226, 229);">
+                示例
+            </th>
+        </tr>
+    </thead>
+    <tbody style="box-sizing: border-box;">
+        <tr style="box-sizing: border-box; border-top: 1px solid rgb(198, 203, 209);">
+            <td align="center" style="box-sizing: border-box; padding: 6px 13px; border-color: rgb(223, 226, 229);">
+                page
+            </td>
+            <td align="center" style="box-sizing: border-box; padding: 6px 13px; border-color: rgb(223, 226, 229);">
+                Integer
+            </td>
+            <td align="center" style="box-sizing: border-box; padding: 6px 13px; border-color: rgb(223, 226, 229);">
+                否
+            </td>
+            <td align="center" style="box-sizing: border-box; padding: 6px 13px; border-color: rgb(223, 226, 229);">
+                页数，从1开始
+            </td>
+            <td align="center" style="box-sizing: border-box; padding: 6px 13px; border-color: rgb(223, 226, 229);">
+                1
+            </td>
+        </tr>
+        <tr style="box-sizing: border-box; background-color: rgb(246, 248, 250); border-top: 1px solid rgb(198, 203, 209);">
+            <td align="center" style="box-sizing: border-box; padding: 6px 13px; border-color: rgb(223, 226, 229);">
+                size
+            </td>
+            <td align="center" style="box-sizing: border-box; padding: 6px 13px; border-color: rgb(223, 226, 229);">
+                Integer
+            </td>
+            <td align="center" style="box-sizing: border-box; padding: 6px 13px; border-color: rgb(223, 226, 229);">
+                否
+            </td>
+            <td align="center" style="box-sizing: border-box; padding: 6px 13px; border-color: rgb(223, 226, 229);">
+                每页请求数量
+            </td>
+            <td align="center" style="box-sizing: border-box; padding: 6px 13px; border-color: rgb(223, 226, 229);">
+                10
+            </td>
+        </tr>
+    </tbody>
+</table>
+<p style="box-sizing: border-box; margin-bottom: 16px; margin-top: 0px;">
+    4.返回参数
+</p>
+<table width="960" border="1">
+    <thead style="box-sizing: border-box;">
+        <tr style="box-sizing: border-box; border-top: 1px solid rgb(198, 203, 209);" class="firstRow">
+            <th align="center" style="box-sizing: border-box; padding: 6px 13px; border-color: rgb(223, 226, 229);">
+                参数
+            </th>
+            <th align="center" style="box-sizing: border-box; padding: 6px 13px; border-color: rgb(223, 226, 229);">
+                类型
+            </th>
+            <th align="center" style="box-sizing: border-box; padding: 6px 13px; border-color: rgb(223, 226, 229);">
+                描述
+            </th>
+            <th align="center" style="box-sizing: border-box; padding: 6px 13px; border-color: rgb(223, 226, 229);">
+                示例
+            </th>
+        </tr>
+    </thead>
+    <tbody style="box-sizing: border-box;">
+        <tr style="box-sizing: border-box; border-top: 1px solid rgb(198, 203, 209);">
+            <td align="center" style="box-sizing: border-box; padding: 6px 13px; border-color: rgb(223, 226, 229);">
+                state
+            </td>
+            <td align="center" style="box-sizing: border-box; padding: 6px 13px; border-color: rgb(223, 226, 229);">
+                Integer
+            </td>
+            <td align="center" style="box-sizing: border-box; padding: 6px 13px; border-color: rgb(223, 226, 229);">
+                请求状态1成功，-1失败
+            </td>
+            <td align="center" style="box-sizing: border-box; padding: 6px 13px; border-color: rgb(223, 226, 229);">
+                1
+            </td>
+        </tr>
+        <tr style="box-sizing: border-box; background-color: rgb(246, 248, 250); border-top: 1px solid rgb(198, 203, 209);">
+            <td align="center" style="box-sizing: border-box; padding: 6px 13px; border-color: rgb(223, 226, 229);">
+                msg
+            </td>
+            <td align="center" style="box-sizing: border-box; padding: 6px 13px; border-color: rgb(223, 226, 229);">
+                String
+            </td>
+            <td align="center" style="box-sizing: border-box; padding: 6px 13px; border-color: rgb(223, 226, 229);">
+                请求状态说明
+            </td>
+            <td align="center" style="box-sizing: border-box; padding: 6px 13px; border-color: rgb(223, 226, 229);">
+                success
+            </td>
+        </tr>
+        <tr style="box-sizing: border-box; border-top: 1px solid rgb(198, 203, 209);">
+            <td align="center" style="box-sizing: border-box; padding: 6px 13px; border-color: rgb(223, 226, 229);">
+                data
+            </td>
+            <td align="center" style="box-sizing: border-box; padding: 6px 13px; border-color: rgb(223, 226, 229);">
+                object
+            </td>
+            <td align="center" style="box-sizing: border-box; padding: 6px 13px; border-color: rgb(223, 226, 229);">
+                列表数据
+            </td>
+            <td align="center" style="box-sizing: border-box; padding: 6px 13px; border-color: rgb(223, 226, 229);">
+                略
+            </td>
+        </tr>
+        <tr style="box-sizing: border-box; background-color: rgb(246, 248, 250); border-top: 1px solid rgb(198, 203, 209);">
+            <td align="center" style="box-sizing: border-box; padding: 6px 13px; border-color: rgb(223, 226, 229);">
+                total
+            </td>
+            <td align="center" style="box-sizing: border-box; padding: 6px 13px; border-color: rgb(223, 226, 229);">
+                int
+            </td>
+            <td align="center" style="box-sizing: border-box; padding: 6px 13px; border-color: rgb(223, 226, 229);">
+                公告总数量
+            </td>
+            <td align="center" style="box-sizing: border-box; padding: 6px 13px; border-color: rgb(223, 226, 229);">
+                20
+            </td>
+        </tr>
+        <tr style="box-sizing: border-box; border-top: 1px solid rgb(198, 203, 209);">
+            <td align="center" style="box-sizing: border-box; padding: 6px 13px; border-color: rgb(223, 226, 229);">
+                list
+            </td>
+            <td align="center" style="box-sizing: border-box; padding: 6px 13px; border-color: rgb(223, 226, 229);">
+                array
+            </td>
+            <td align="center" style="box-sizing: border-box; padding: 6px 13px; border-color: rgb(223, 226, 229);">
+                公告列表
+            </td>
+            <td align="center" style="box-sizing: border-box; padding: 6px 13px; border-color: rgb(223, 226, 229);">
+                略
+            </td>
+        </tr>
+    </tbody>
+</table>
+<p style="box-sizing: border-box; margin-bottom: 16px; margin-top: 0px;">
+    5.请求成功示例
+</p>
+<pre style="box-sizing: border-box; font-family: SFMono-Regular, Consolas, &quot;Liberation Mono&quot;, Menlo, Courier, monospace; font-size: 13.6px; margin-bottom: 0px !important; margin-top: 0px; overflow-wrap: normal; background-color: rgb(246, 248, 250); border-radius: 3px; line-height: 1.45; overflow: auto; padding: 16px;">{
+	state: 1,
+	msg: "success",
+	data: {
+		total: 29,
+		list: [
+			{
+				column_id: 304,
+				a_abstract: "",
+				create_time: "2018-11-26 17:05:47",
+				a_title: "公告标题",
+				a_abstract_en: "",
+				id: 153,
+				a_time: "2018-11-26 17:00",
+				a_title_en: "Announcement of"
+			}
+			
+		]
+	}
+}</pre>
+<p>
+    <br>
+</p></li><li style="display:none"><h1 class="flex-auto min-width-0 mb-2 mb-md-0 mr-0 mr-md-2 gh-header-title instapaper_title" style="box-sizing: border-box; font-size: 32px; margin: 0px 150px 0px 0px; font-weight: 400; flex: 1 1 auto !important; min-width: 0px !important; line-height: 1.125; overflow-wrap: break-word;">
+    获取公告详情<br>
+</h1>
+<p style="box-sizing: border-box; margin-bottom: 16px; margin-top: 0px !important;">
+    1.请求URL：<a href="http://www.blackhorse.pro/n/news/{id}" target="_self">http://www.blackhorse.pro/n/news/{id}</a>
+</p>
+<p style="box-sizing: border-box; margin-bottom: 16px; margin-top: 0px;">
+    2.请求类型：GET
+</p>
+<p style="box-sizing: border-box; margin-bottom: 16px; margin-top: 0px;">
+    3.请求参数：
+</p>
+<table width="960" border="1">
+    <thead style="box-sizing: border-box;">
+        <tr style="box-sizing: border-box; border-top: 1px solid rgb(198, 203, 209);" class="firstRow">
+            <th align="center" style="box-sizing: border-box; padding: 6px 13px; border-color: rgb(223, 226, 229);">
+                参数
+            </th>
+            <th align="center" style="box-sizing: border-box; padding: 6px 13px; border-color: rgb(223, 226, 229);">
+                类型
+            </th>
+            <th align="center" style="box-sizing: border-box; padding: 6px 13px; border-color: rgb(223, 226, 229);">
+                是否参与签名
+            </th>
+            <th align="center" style="box-sizing: border-box; padding: 6px 13px; border-color: rgb(223, 226, 229);">
+                描述
+            </th>
+            <th align="center" style="box-sizing: border-box; padding: 6px 13px; border-color: rgb(223, 226, 229);">
+                示例
+            </th>
+        </tr>
+    </thead>
+    <tbody style="box-sizing: border-box;">
+        <tr style="box-sizing: border-box; border-top: 1px solid rgb(198, 203, 209);">
+            <td align="center" style="box-sizing: border-box; padding: 6px 13px; border-color: rgb(223, 226, 229);">
+                id
+            </td>
+            <td align="center" style="box-sizing: border-box; padding: 6px 13px; border-color: rgb(223, 226, 229);">
+                Integer
+            </td>
+            <td align="center" style="box-sizing: border-box; padding: 6px 13px; border-color: rgb(223, 226, 229);">
+                否
+            </td>
+            <td align="center" style="box-sizing: border-box; padding: 6px 13px; border-color: rgb(223, 226, 229);">
+                公告id
+            </td>
+            <td align="center" style="box-sizing: border-box; padding: 6px 13px; border-color: rgb(223, 226, 229);">
+                153
+            </td>
+        </tr>
+    </tbody>
+</table>
+<p style="box-sizing: border-box; margin-bottom: 16px; margin-top: 0px;">
+    4.返回参数
+</p>
+<table width="960" border="1">
+    <thead style="box-sizing: border-box;">
+        <tr style="box-sizing: border-box; border-top: 1px solid rgb(198, 203, 209);" class="firstRow">
+            <th align="center" style="box-sizing: border-box; padding: 6px 13px; border-color: rgb(223, 226, 229);">
+                参数
+            </th>
+            <th align="center" style="box-sizing: border-box; padding: 6px 13px; border-color: rgb(223, 226, 229);">
+                类型
+            </th>
+            <th align="center" style="box-sizing: border-box; padding: 6px 13px; border-color: rgb(223, 226, 229);">
+                描述
+            </th>
+            <th align="center" style="box-sizing: border-box; padding: 6px 13px; border-color: rgb(223, 226, 229);">
+                示例
+            </th>
+        </tr>
+    </thead>
+    <tbody style="box-sizing: border-box;">
+        <tr style="box-sizing: border-box; border-top: 1px solid rgb(198, 203, 209);">
+            <td align="center" style="box-sizing: border-box; padding: 6px 13px; border-color: rgb(223, 226, 229);">
+                state
+            </td>
+            <td align="center" style="box-sizing: border-box; padding: 6px 13px; border-color: rgb(223, 226, 229);">
+                Integer
+            </td>
+            <td align="center" style="box-sizing: border-box; padding: 6px 13px; border-color: rgb(223, 226, 229);">
+                请求状态1成功，-1失败
+            </td>
+            <td align="center" style="box-sizing: border-box; padding: 6px 13px; border-color: rgb(223, 226, 229);">
+                1
+            </td>
+        </tr>
+        <tr style="box-sizing: border-box; background-color: rgb(246, 248, 250); border-top: 1px solid rgb(198, 203, 209);">
+            <td align="center" style="box-sizing: border-box; padding: 6px 13px; border-color: rgb(223, 226, 229);">
+                msg
+            </td>
+            <td align="center" style="box-sizing: border-box; padding: 6px 13px; border-color: rgb(223, 226, 229);">
+                String
+            </td>
+            <td align="center" style="box-sizing: border-box; padding: 6px 13px; border-color: rgb(223, 226, 229);">
+                请求状态说明
+            </td>
+            <td align="center" style="box-sizing: border-box; padding: 6px 13px; border-color: rgb(223, 226, 229);">
+                success
+            </td>
+        </tr>
+        <tr style="box-sizing: border-box; border-top: 1px solid rgb(198, 203, 209);">
+            <td align="center" style="box-sizing: border-box; padding: 6px 13px; border-color: rgb(223, 226, 229);">
+                data
+            </td>
+            <td align="center" style="box-sizing: border-box; padding: 6px 13px; border-color: rgb(223, 226, 229);">
+                object
+            </td>
+            <td align="center" style="box-sizing: border-box; padding: 6px 13px; border-color: rgb(223, 226, 229);">
+                公告对象
+            </td>
+            <td align="center" style="box-sizing: border-box; padding: 6px 13px; border-color: rgb(223, 226, 229);">
+                略
+            </td>
+        </tr>
+    </tbody>
+</table>
+<p style="box-sizing: border-box; margin-bottom: 16px; margin-top: 0px;">
+    5.请求成功示例
+</p>
+<pre style="box-sizing: border-box; font-family: SFMono-Regular, Consolas, &quot;Liberation Mono&quot;, Menlo, Courier, monospace; font-size: 13.6px; margin-bottom: 0px !important; margin-top: 0px; overflow-wrap: normal; background-color: rgb(246, 248, 250); border-radius: 3px; line-height: 1.45; overflow: auto; padding: 16px;">{
+ state: 1,
+ msg: "success",
+ data: {
+   id: 153,
+   column_id: 304,
+   a_title: "公告标题",
+   a_title_en: "Notice title",
+   a_abstract: "",
+   a_abstract_en: "",
+   a_img_file: null,
+   a_img_file_en: null
+   // 省略一些字段
+ }
+}</pre>
+<p>
+    <br>
+</p></li></ul>
+		</div>
+	</div>
+	<script type="text/javascript">
+$("ul.title").on("click","li",function(){
+	$(this).addClass("cur");
+	$(this).siblings().removeClass("cur");
+	$(".content ul li").eq($(this).index()).css("display","block");
+	$(".content ul li").eq($(this).index()).siblings().css("display","none");
+	// $(".content").html(data[$(this).index()].content);
+}) 
+	</script>
+</body>
+</html>

@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <meta http-equiv="Content-Type" content="no-cache">
+    <title>Blackhorse | 争做区块链交易平台的一匹黑马</title>
+	<style type="text/css">
+		html,body,div,ul,li,p,a,em,i{
+			margin:0px;
+			padding:0px;
+		}
+		ul,li{
+			list-style: none;
+		}
+		a{
+			text-decoration: none;
+		}
+		#demos{
+			width: 1200px;
+			margin:0 auto;
+		}
+		.content{
+			padding:30px 30px;
+		}
+		.reback{
+			width: 100px;
+			height:40px;
+			line-height: 40px;
+			font-size: 18px;
+			margin-left: 30px;
+			border:1px solid lightblue;
+			color:lightblue;
+			border-radius: 8px;
+			text-align: center;
+			margin-top:30px;
+			cursor: pointer;
+		}
+	</style>
+</head>
+
+<body>
+	<div id="demos">
+		<div class="reback" onclick="history.go(-1)">返回</div>
+		<div class="content"><h1 class="flex-auto min-width-0 mb-2 mb-md-0 mr-0 mr-md-2 gh-header-title instapaper_title" style="box-sizing: border-box; font-size: 32px; margin: 0px 150px 0px 0px; font-weight: 400; flex: 1 1 auto !important; min-width: 0px !important; line-height: 1.125; overflow-wrap: break-word;">
+    签名认证<br>
+</h1>
+<h3 style="box-sizing: border-box; margin-bottom: 16px; font-size: 1.25em; line-height: 1.25; margin-top: 0px !important;">
+    签名描述
+</h3>
+<p style="box-sizing: border-box; margin-bottom: 16px; margin-top: 0px;">
+    将要参与的签名参数以<code style="box-sizing: border-box; font-family: SFMono-Regular, Consolas, &quot;Liberation Mono&quot;, Menlo, Courier, monospace; font-size: 13.6px; background-color: rgba(27, 31, 35, 0.05); border-radius: 3px; margin: 0px; padding: 0.2em 0.4em;">key=value</code>的形式，参数之间使用‘&amp;’进行拼接，对key进行升序排序，使用MD5进行签名加密，将加密后的字符串截取前28位，得到加密后的sign
+</p>
+<h3 style="box-sizing: border-box; margin-bottom: 16px; margin-top: 24px; font-size: 1.25em; line-height: 1.25;">
+    签名(sign)固定参数说明：
+</h3>
+<p style="box-sizing: border-box; margin-bottom: 16px; margin-top: 0px;">
+    1.<span style="box-sizing: border-box; font-weight: 600;">api_key</span>：用户可从<a href="http://www.blackhorse.pro/" target="_blank">官网&nbsp;</a>-&gt; API管理申请获得，例如：<code style="box-sizing: border-box; font-family: SFMono-Regular, Consolas, &quot;Liberation Mono&quot;, Menlo, Courier, monospace; font-size: 13.6px; background-color: rgba(27, 31, 35, 0.05); border-radius: 3px; margin: 0px; padding: 0.2em 0.4em;">5b092b11-001c-4e50-9d8e-00f9db752241</code>
+</p>
+<p style="box-sizing: border-box; margin-bottom: 16px; margin-top: 0px;">
+    2.<span style="box-sizing: border-box; font-weight: 600;">sign_type</span>: 签名类型,例如：<code style="box-sizing: border-box; font-family: SFMono-Regular, Consolas, &quot;Liberation Mono&quot;, Menlo, Courier, monospace; font-size: 13.6px; background-color: rgba(27, 31, 35, 0.05); border-radius: 3px; margin: 0px; padding: 0.2em 0.4em;">MD5</code>
+</p>
+<p style="box-sizing: border-box; margin-bottom: 16px; margin-top: 0px;">
+    3.<span style="box-sizing: border-box; font-weight: 600;">timestamp</span>：时间戳精确到秒，<span style="box-sizing: border-box; font-weight: 600;">客户端请求时间与服务端时间相差间隔小于15s</span>，否则报错 例如：<code style="box-sizing: border-box; font-family: SFMono-Regular, Consolas, &quot;Liberation Mono&quot;, Menlo, Courier, monospace; font-size: 13.6px; background-color: rgba(27, 31, 35, 0.05); border-radius: 3px; margin: 0px; padding: 0.2em 0.4em;">1540619752</code>
+</p>
+<p style="box-sizing: border-box; margin-bottom: 16px; margin-top: 0px;">
+    4.<span style="box-sizing: border-box; font-weight: 600;">apiSecret</span>: (<span style="box-sizing: border-box; font-weight: 600;">apiSecret不需要参与排序，并且放到最后拼接</span>)用户可从<a href="http://www.blackhorse.pro/" target="_blank">官网</a>&nbsp;-&gt; API管理申请获得,例如：<code style="box-sizing: border-box; font-family: SFMono-Regular, Consolas, &quot;Liberation Mono&quot;, Menlo, Courier, monospace; font-size: 13.6px; background-color: rgba(27, 31, 35, 0.05); border-radius: 3px; margin: 0px; padding: 0.2em 0.4em;">3A703C58F86BBD5807326AF6B243529E</code>
+</p>
+<h3 style="box-sizing: border-box; margin-bottom: 16px; margin-top: 24px; font-size: 1.25em; line-height: 1.25;">
+    签名(sign)步骤
+</h3>
+<p style="box-sizing: border-box; margin-bottom: 16px; margin-top: 0px;">
+    1.对api_key、sign_type、timestamp3个参数进行升序排序，参数之间用’&amp;‘进行拼接，末尾再拼接apiSecret.例如：<code style="box-sizing: border-box; font-family: SFMono-Regular, Consolas, &quot;Liberation Mono&quot;, Menlo, Courier, monospace; font-size: 13.6px; background-color: rgba(27, 31, 35, 0.05); border-radius: 3px; margin: 0px; padding: 0.2em 0.4em;">api_key=5b092b11-001c-4e50-9d8e-00f9db752241&amp;sign_type=MD5&amp;timestamp=1540619752&amp;apiSecret=3A703C58F86BBD5807326AF6B243529E</code>
+</p>
+<p style="box-sizing: border-box; margin-bottom: 16px; margin-top: 0px;">
+    2.将字符串<code style="box-sizing: border-box; font-family: SFMono-Regular, Consolas, &quot;Liberation Mono&quot;, Menlo, Courier, monospace; font-size: 13.6px; background-color: rgba(27, 31, 35, 0.05); border-radius: 3px; margin: 0px; padding: 0.2em 0.4em;">api_key=5b092b11-001c-4e50-9d8e-0000f9db752241&amp;sign_type=MD5&amp;timestamp=1540619752&amp;apiSecret=3A703C58 F86BBD5807326AF6B243529E</code>用32位MD5进行加密，截取前28位
+</p>
+<h3 style="box-sizing: border-box; margin-bottom: 16px; margin-top: 24px; font-size: 1.25em; line-height: 1.25;">
+    签名举例
+</h3>
+<p style="box-sizing: border-box; margin-bottom: 16px; margin-top: 0px;">
+    1.以<span style="box-sizing: border-box; font-weight: 600;">创建交易订单</span>举例，需要请求的参数有api_key、o_no、o_price_type、o_type、price、volume、sign_type、symbol、timestamp这9个，那么就需要将这9个进行升序排序用‘&amp;’拼接，最后再拼接apiSecret
+</p>
+<p style="box-sizing: border-box; margin-bottom: 16px; margin-top: 0px;">
+    2.拼接后的字符串：<code style="box-sizing: border-box; font-family: SFMono-Regular, Consolas, &quot;Liberation Mono&quot;, Menlo, Courier, monospace; font-size: 13.6px; background-color: rgba(27, 31, 35, 0.05); border-radius: 3px; margin: 0px; padding: 0.2em 0.4em;">api_key=5b092b11-001c-4e50-9d8e-00f9db752241&amp;o_no=1540636347782-0.7975535606801178&amp;o_price_type=limit&amp;o_type=sell&amp;price=1&amp;sign_type=MD5&amp;symbol=ETHQC&amp;timestamp=1540636347&amp;volume=0.1&amp;apiSecret=3A703C58F86BBD5807326AF6B243529E</code>
+</p>
+<p style="box-sizing: border-box; margin-bottom: 0px !important; margin-top: 0px;">
+    3.将步骤2中的字符串使用32位MD5进行加密，然后截取前28位，得到sign：<code style="box-sizing: border-box; font-family: SFMono-Regular, Consolas, &quot;Liberation Mono&quot;, Menlo, Courier, monospace; font-size: 13.6px; background-color: rgba(27, 31, 35, 0.05); border-radius: 3px; margin: 0px; padding: 0.2em 0.4em;">ade9e763f24276512c033f7cef76</code>
+</p>
+<p>
+    <br>
+</p></div>
+	</div>
+</body>
+</html>

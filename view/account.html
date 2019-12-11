@@ -1,0 +1,523 @@
+<div class="container1" id="account">
+    <div class="main-panel f-cb">
+        <div class="common-title" id="common-title">
+            
+        </div>
+        <div class="common-container">
+            <div id="view" class="inner-container">
+           
+            </div>
+        </div>
+        
+    </div>
+</div>
+
+<div class="as-dialog" id="asDialog">
+
+</div>
+<div class="as-currency-dialog" id="asCurrencyDialog">
+
+</div>
+<div class="as-identity-dialog" id="asIdentityDialog">
+
+</div>
+<style type="text/css">
+
+
+	#account #view{
+	
+	}
+    #account #view .ac-inner{
+        padding:20px;
+    }
+	#account .account-title{
+		line-height: 26px;
+		overflow: hidden;
+		padding-bottom: 20px;
+		font-size: 16px;
+
+	}
+
+	#account .account-title .account-title-img img{
+		vertical-align: middle;
+		margin-right: 20px;
+	}
+	
+	#account .account-title .account-title-c{
+		width: 200px;
+		color:#343a90;
+
+	}
+    #account .invited-container{
+        padding:20px;
+        overflow: hidden;
+    }
+	#account .invited-container .account-invited{
+        line-height: 30px;
+
+	}
+    #account .invited-container .account-invited input{
+        background: transparent;
+        color:#cbdaf7;
+    }
+	#account .invited-container .account-invited .copy{
+		display: inline-block;
+		text-align: center;
+		color:#0391ff;
+		border:0;
+		outline: 0;
+		height: 26px;
+		line-height: 26px;
+        background: transparent;
+        border-radius: 8px;
+        font-size: 16px
+	}
+	#account .inner-security input,
+	#account .inner_security-title input{
+		border: 0;
+		outline: 0;
+		width: 400px;
+	}
+	#account .invited-container .account-invited .copy:hover{
+		opacity: 0.6;
+		transition: 0.6s;
+	}
+    #account .invited-container .inviter-total{
+        width: 300px;
+        padding-top: 20px;
+        margin-left: 30px;
+    }
+     #account .invited-container .inviter-total span{
+        float: left;
+        width: 33%;
+        text-align: center;
+        line-height: 30px;
+    }
+    #account .invited-container .inviter-total .num span{
+        color:#04cddc;
+        font-weight: 500;
+        font-size:16px;
+    }
+	#account .account-content{
+
+	}
+	.account-content-box{
+		height: 50px;
+		line-height: 50px;
+		text-align: center;
+        position: relative;
+	}
+     .account-content-box .f-center{
+        position: absolute;
+        top:50%;
+        left: 50%;
+        transform: translate(-50%,-50%);
+        text-align: center;
+    }
+    #account .account-content .account-content-box span.f-fl{
+        width: 230px;
+       text-align: left;
+    }
+	#account .account-content .account-content-box i{
+		font-size: 22px;
+		vertical-align: middle;
+		
+		line-height: 50px;
+		margin-right: 10px;
+	}
+	#account .account-content .account-content-box i.fa-exclamation-circle{
+		color:#fd3232;
+	}
+	#account .account-content .account-content-box i.fa-check-circle{
+		color:#32fdc6;
+	}
+	#account .account-content .account-content-box .fz16{
+		font-size: 16px;
+	}
+    #account .account-content .account-content-box span.fz16{
+        min-width: 60px;
+        height: 100%;
+    }
+	#account .account-content .account-content-box em{
+		margin-left: 10px;
+		font-size: 20px
+	}
+	#account .account-content .account-content-box span.f-fr{
+		cursor: pointer;
+
+	}
+	#account .account-content .account-content-box span.f-fr:hover{
+		opacity: 0.6
+	}
+    .pd70{
+        padding-top:70px;
+    }
+
+	/*实名认证*/
+.as-identity-dialog .dialog-content{
+	width: 661px;
+}
+#asIdentityDialog .identity-verify .step1,
+#asIdentityDialog .identity-verify .step2 {
+
+}
+
+#asIdentityDialog .identity-verify .step1 {
+    /*display: none;*/
+}
+
+#asIdentityDialog .identity-verify .step2 {
+    display: none;
+}
+
+#asIdentityDialog .identity-verify .step3 {
+    display: none;
+}
+
+#asIdentityDialog .identity-verify .step4 {
+    display: none;
+}
+
+#asIdentityDialog .identity-verify .step5 {
+    display: none;
+}
+
+#asIdentityDialog .identity-verify .step1 .tips,
+#asIdentityDialog .identity-verify .step2 .tips {
+    margin-top: 30px;
+}
+
+#asIdentityDialog .identity-verify .step1 .tips i,
+#asIdentityDialog .identity-verify .step2 .tips i {
+    width: 18px;
+    height: 18px;
+    background-image: url(../images/tipsicon.png);
+    display: block;
+    float: left;
+}
+
+#asIdentityDialog .identity-verify .step1 .tips span {
+    margin-left: 10px;
+}
+
+#asIdentityDialog .identity-verify .step1 .form-wrap {
+    /*height: 480px;*/
+    /*width: 446px;*/
+    /*margin-top: 30px;*/
+    margin-left: auto;
+    margin-right: auto;
+}
+
+#asIdentityDialog .identity-verify .step1 .form-wrap .input-wrap {
+    width: 100%;
+    height: 40px;
+    margin-bottom: 10px;
+    clear: both;
+}
+
+#asIdentityDialog .identity-verify .step1 .form-wrap .input-tips {
+    height: 19px;
+    margin-top: 3px;
+    float: right;
+}
+
+#asIdentityDialog .identity-verify .step1 .form-wrap label {
+    width: 56px;
+    /*height: 45px;*/
+    /*line-height: 45px;*/
+    text-align: right;
+    display: block;
+    float: left;
+}
+#asIdentityDialog .identity-verify .step1 .form-wrap select,
+#asIdentityDialog .identity-verify .step1 .form-wrap input {
+    padding-left: 20px;
+    transition: .6s;
+    width: 100%;
+    border: 0;
+   	color: #cbdaf7;
+    background:transparent;
+    outline-color: rgba(137,141,165,0.6);
+    border:1px solid rgba(137,141,165,0.1);
+    margin:0;
+    box-sizing: border-box;
+}
+
+#asIdentityDialog .identity-verify .step1 .form-wrap select:hover,
+#asIdentityDialog .identity-verify .step1 .form-wrap input:hover,
+#view .inner-get-coin .input-wrap select:hover,
+#view .inner-get-coin .input-wrap input:hover {
+    /*border: 1px solid #01bd8f;*/
+    transition: .6s;
+}
+
+#asIdentityDialog .identity-verify .step1 .form-wrap select option {
+    border: 1px solid #4e5b85;
+    background-color: #fff;
+    height: 45px;
+}
+
+#asIdentityDialog .identity-verify .step1 .form-wrap select {
+
+
+}
+
+#asIdentityDialog .identity-verify .step1 .form-wrap input {
+
+    height: 40px;
+    position: relative;
+    top: 8px;
+}
+
+#asIdentityDialog .identity-verify .step1 .form-wrap button {
+    width: 360px;
+    height: 45px;
+    line-height: 45px;
+    text-align: center;
+    font-size: 16px;
+    border: none;
+    outline: none;
+    border-radius: 5px;
+    margin-top: 40px;
+    float: right;
+    background: #01bd8f;
+    color: #fff;
+    transition: .6s;
+}
+
+#asIdentityDialog .identity-verify .step2 {
+    padding-top: 40px;
+}
+
+#asIdentityDialog .identity-verify .step2 button {
+    width: 360px;
+    height: 45px;
+    line-height: 45px;
+    text-align: center;
+    font-size: 16px;
+    border: none;
+    outline: none;
+    border-radius: 5px;
+    background: #0391ff;
+    color: #fff;
+    transition: .6s;
+    display: block;
+    margin: 0 auto;
+}
+
+#asIdentityDialog .identity-verify .step1 .form-wrap button:hover,
+#asIdentityDialog .identity-verify .step2 button:hover {
+    /*background: #3257c9;*/
+    transition: .6s;
+    opacity: 0.6;
+}
+
+#asIdentityDialog .identity-verify .step2 ul {
+    margin-left: 48px;
+}
+
+#asIdentityDialog .identity-verify .step2 ul li {
+    margin-bottom: 10px;
+    list-style-type: disc;
+}
+
+#asIdentityDialog .identity-verify .step3 p,
+#asIdentityDialog .identity-verify .step4 p,
+#asIdentityDialog .identity-verify .step5 p {
+    font-size: 24px;
+}
+
+#asIdentityDialog .identity-verify .step3 .tips {
+    width: 550px;
+    margin: 0px auto 0 auto;
+    position: relative;
+    top: 195px;
+}
+
+#asIdentityDialog .identity-verify .step4 .tips {
+    margin: 0px auto 0 auto;
+    width: 430px;
+    position: relative;
+    top: 195px;
+}
+
+#asIdentityDialog .identity-verify .step4 .tips p {
+    width: 370px;
+}
+
+#asIdentityDialog .identity-verify .step5 .tips {
+    margin: 0px auto 0 auto;
+    width: 550px;
+    position: relative;
+    top: 65px;
+    left: 20px;
+}
+
+#asIdentityDialog .identity-verify .step3 .waiting {
+    display: block;
+    width: 22px;
+    height: 26px;
+    margin: 3.5px 20px 3.5px 0;
+}
+
+#asIdentityDialog .identity-verify .step4 .pass {
+    display: block;
+    width: 32px;
+    height: 32px;
+    margin: 0.5px 20px 0.5px 0;
+}
+
+#asIdentityDialog .identity-verify .step5 .denied {
+    display: block;
+    width: 33px;
+    height: 33px;
+}
+
+#asIdentityDialog .identity-verify .step4 .user-list {
+    margin-top: 50px;
+}
+
+#asIdentityDialog .identity-verify .step4 .user-list table {
+    width: 100%;
+}
+
+#asIdentityDialog .identity-verify .step4 .user-list table tr {
+    height: 40px;
+    line-height: 40px;
+}
+
+#asIdentityDialog .identity-verify .step4 .user-list table td:first-child {
+    padding-left: 80px;
+    padding-right: 60px;
+    width: 60px;
+}
+
+#asIdentityDialog .identity-verify .step5 .suggestion {
+    margin-top: 20px;
+}
+
+#asIdentityDialog .identity-verify .step5 ul li {
+    list-style-type: disc;
+    margin-left: 45px;
+    margin-bottom: 22px;
+}
+
+#asIdentityDialog .identity-verify .step5 button {
+    display: block;
+    width: 260px;
+    height: 50px;
+    text-align: center;
+    line-height: 50px;
+    border: none;
+    color: #fff;
+    background-color: #01bd8f;
+    border-radius: 5px;
+    margin-top: 50px;
+    margin-left: 100px;
+    font-size: 16px;
+}
+
+#asIdentityDialog .identity-verify .step5 button:hover {
+    opacity: 0.6;
+    transition: 0.6;
+}
+
+#asIdentityDialog .identity-verify {
+    /*margin-top: 50px;*/
+}
+
+#asIdentityDialog .identity-verify .row {
+    margin-bottom: 50px;
+}
+
+#asIdentityDialog .identity-verify .row span {
+    float: left;
+}
+
+#asIdentityDialog .identity-verify .user-upload {
+    
+}
+#asIdentityDialog .identity-verify .user-upload div.img-box{
+    width: 200px;
+    position: relative;
+    margin-left: 10px;
+    background: #3b4091;
+    height: 113px;
+}
+#asIdentityDialog .identity-verify .user-upload:first-child  div.img-box{
+	margin-left: 0;
+}
+#asIdentityDialog .identity-verify .user-upload .tits {
+    text-align: center;
+    height:30px;
+    line-height: 30px;
+    font-size: 12px;
+    color:#0391ff;
+}
+
+#asIdentityDialog .identity-verify .user-upload .jia {
+    position: absolute;
+    width: 40px;
+    height: 40px;
+    border-radius: 40px;
+    background: rgba(0, 0, 0, 0.5);
+    left: 50%;
+    top: 60px;
+    transform: translateX(-50%);
+    z-index: 9;
+}
+
+#asIdentityDialog .identity-verify .user-upload .jia:before {
+    content: "";
+    display: block;
+    position: absolute;
+    width: 20px;
+    height: 4px;
+    background: #fff;
+    top: 18px;
+    left: 10px;
+}
+
+#asIdentityDialog .identity-verify .user-upload .jia:after {
+    content: "";
+    display: block;
+    position: absolute;
+    width: 4px;
+    height: 20px;
+    background: #fff;
+    left: 18px;
+    top: 10px;
+}
+
+#asIdentityDialog .identity-verify .user-upload .file-upload {
+    position: absolute;
+    right: 0;
+    top: 0;
+    opacity: 0;
+    width: 100%;
+    height: 100%;
+    cursor: pointer;
+}
+
+#asIdentityDialog .identity-verify .user-upload img {
+	position: absolute;
+	top: 50%;
+	left:50%;
+	transform: translate(-50%,-50%);
+    width: 100%;
+    height: 100%;
+
+}
+
+#asIdentityDialog .identity-verify .example {
+    margin-left: 80px;
+}
+
+#asIdentityDialog .identity-verify .example img {
+    width: 254px;
+    height: 160px;
+    display: block;
+    margin-left: 68px;
+}
+
+</style>
